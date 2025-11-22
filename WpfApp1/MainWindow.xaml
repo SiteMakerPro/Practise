@@ -6,28 +6,41 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="1024" Width="1440">
-    <Grid Width="1440" Height="1024">
-        <Rectangle HorizontalAlignment="Center" Height="84" VerticalAlignment="Top" Width="1440">
-            <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <LinearGradientBrush.RelativeTransform>
-                        <TransformGroup>
-                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
-                            <SkewTransform CenterX="0.5" CenterY="0.5"/>
-                            <RotateTransform Angle="-90" CenterX="0.5" CenterY="0.5"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </LinearGradientBrush.RelativeTransform>
-                    <GradientStop Color="#FFF2A65B" Offset="0"/>
-                    <GradientStop Color="#FFEE7A6E" Offset="1"/>
-                </LinearGradientBrush>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Image Height="443" Width="1441" Source="/image 1.jpg" Stretch="Fill" Margin="0,84,0,0" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+    <Grid Width="1440" Height="1024" Background="#FFF4E1E3">
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Rectangle HorizontalAlignment="Center" Height="84" VerticalAlignment="Center" Width="1440">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <LinearGradientBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                                <RotateTransform Angle="-90" CenterX="0.5" CenterY="0.5"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </LinearGradientBrush.RelativeTransform>
+                        <GradientStop Color="#FFF2A65B" Offset="0"/>
+                        <GradientStop Color="#FFEE7A6E" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBlock HorizontalAlignment="Left" Margin="134,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" FontFamily="Verdana" FontSize="32" Height="40" Width="288" Foreground="White"><Run Language="ru-ru" Text="ТРАНБОЛОНШОП"/></TextBlock>
+            <Image HorizontalAlignment="Left" Height="64" Margin="60,0,0,0" VerticalAlignment="Center" Width="64" Source="/image2.png"/>
+            <Button Content="" HorizontalAlignment="Left" Margin="1288,0,0,0" VerticalAlignment="Center" Width="36" Height="36">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Search.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="account" Content="" HorizontalAlignment="Left" Margin="1344,0,0,0" VerticalAlignment="Center" Width="36" Height="36" Click="Button_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Account Male.png"/>
+                </Button.Background>
+            </Button>
+
+        </Grid>
+        <Image Height="443" Width="1441" Source="/image 1 (1).jpg" Stretch="Fill" Margin="0,84,0,0" VerticalAlignment="Top" HorizontalAlignment="Center"/>
         <TextBlock HorizontalAlignment="Left" Margin="40,581,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Verdana" FontSize="32" FontWeight="Bold" Height="40" Width="220"><Run Language="ru-ru" Text="КАТЕГОРИИ"/><LineBreak/><Run Language="ru-ru"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="134,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Verdana" FontSize="32" Height="40" Width="288" Foreground="White"><Run Language="ru-ru" Text="ТРАНБОЛОНШОП"/></TextBlock>
-        <Image HorizontalAlignment="Left" Height="64" Margin="60,10,0,0" VerticalAlignment="Top" Width="64" Source="/image2.png"/>
-        <Button Content="Инвентарь" HorizontalAlignment="Left" Margin="40,659,0,0" VerticalAlignment="Top" Height="300" Width="300" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Bottom" Padding="20,0,8,20" FontFamily="Verdana" FontSize="24">
+        <Button Content="Инвентарь" HorizontalAlignment="Left" Margin="40,659,0,0" VerticalAlignment="Top" Height="300" Width="300" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Bottom" Padding="20,0,8,20" FontFamily="Verdana" FontSize="24" Click="Button_Click_1">
             <Button.Background>
                 <ImageBrush ImageSource="/Frame 4 (1).jpg"/>
             </Button.Background>
@@ -45,16 +58,6 @@
         <Button Content="Аксессуары" HorizontalAlignment="Left" Margin="1080,659,0,0" VerticalAlignment="Top" Height="300" Width="300" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Bottom" Padding="20,0,8,20" FontFamily="Verdana" FontSize="24">
             <Button.Background>
                 <ImageBrush ImageSource="/Frame 6 (1).jpg"/>
-            </Button.Background>
-        </Button>
-        <Button Content="" HorizontalAlignment="Left" Margin="1288,24,0,0" VerticalAlignment="Top" Width="36" Height="36">
-            <Button.Background>
-                <ImageBrush ImageSource="/Search.png"/>
-            </Button.Background>
-        </Button>
-        <Button Content="" HorizontalAlignment="Left" Margin="1344,24,0,0" VerticalAlignment="Top" Width="36" Height="36" Click="Button_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/Account Male.png"/>
             </Button.Background>
         </Button>
 

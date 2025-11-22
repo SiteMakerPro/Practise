@@ -31,5 +31,12 @@ namespace WpfApp1
             register.Show();
             this.Close();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            CatalogInvent catalogInvent = new CatalogInvent();
+            catalogInvent.Show();
+            this.Close();
+        }
     }
 }

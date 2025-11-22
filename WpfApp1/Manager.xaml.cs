@@ -15,26 +15,19 @@ using System.Windows.Shapes;
 namespace WpfApp1
 {
     /// <summary>
-    /// Логика взаимодействия для Register.xaml
+    /// Логика взаимодействия для Manager.xaml
     /// </summary>
-    public partial class Register : Window
+    public partial class Manager : Window
     {
-        public Register()
+        public Manager()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void account_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
-            this.Close();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            LogIn login = new LogIn();
-            login.Show();
             this.Close();
         }
     }
