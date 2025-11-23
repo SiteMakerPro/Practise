@@ -5,61 +5,183 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1024" Width="1440">
-    <Grid Width="1440" Height="1024" Background="#FFF4E1E3">
-        <Grid HorizontalAlignment="Center" VerticalAlignment="Top">
-            <Rectangle HorizontalAlignment="Center" Height="84" VerticalAlignment="Center" Width="1440">
-                <Rectangle.Fill>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <LinearGradientBrush.RelativeTransform>
-                            <TransformGroup>
-                                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
-                                <SkewTransform CenterX="0.5" CenterY="0.5"/>
-                                <RotateTransform Angle="-90" CenterX="0.5" CenterY="0.5"/>
-                                <TranslateTransform/>
-                            </TransformGroup>
-                        </LinearGradientBrush.RelativeTransform>
-                        <GradientStop Color="#FFF2A65B" Offset="0"/>
-                        <GradientStop Color="#FFEE7A6E" Offset="1"/>
-                    </LinearGradientBrush>
-                </Rectangle.Fill>
-            </Rectangle>
-            <TextBlock HorizontalAlignment="Left" Margin="134,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" FontFamily="Verdana" FontSize="32" Height="40" Width="288" Foreground="White"><Run Language="ru-ru" Text="ТРАНБОЛОНШОП"/></TextBlock>
-            <Image HorizontalAlignment="Left" Height="64" Margin="60,0,0,0" VerticalAlignment="Center" Width="64" Source="/image2.png"/>
-            <Button Content="" HorizontalAlignment="Left" Margin="1288,0,0,0" VerticalAlignment="Center" Width="36" Height="36">
-                <Button.Background>
-                    <ImageBrush ImageSource="/Search.png"/>
-                </Button.Background>
-            </Button>
-            <Button x:Name="account" Content="" HorizontalAlignment="Left" Margin="1344,0,0,0" VerticalAlignment="Center" Width="36" Height="36" Click="Button_Click">
-                <Button.Background>
-                    <ImageBrush ImageSource="/Account Male.png"/>
-                </Button.Background>
-            </Button>
-
+        Title="ТронболонShop" Height="1024" Width="1440" Icon="/Images/logo.png">
+    <Window.Resources>
+    </Window.Resources>
+    <Grid Width="1440" Height="1024" Background="#FFEEEEEE">
+        <Grid HorizontalAlignment="Left" Height="1024" VerticalAlignment="Top" Width="267" Background="White">
+            <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,20,20,0" Width="227" Height="81.49">
+                <Grid HorizontalAlignment="Left" Height="60" VerticalAlignment="Center" Width="60" RenderTransformOrigin="0.5,0.5">
+                    <Grid.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-45"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Grid.RenderTransform>
+                    <Image Margin="0,0,0,0" Source="/Images/logo.png" Stretch="Fill"/>
+                </Grid>
+                <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Typography.Capitals="AllSmallCaps" VerticalAlignment="Center" FontFamily="Verdana" FontSize="28"><Run Text="Тр"/><Run Language="ru-ru" Text="е"/><Run Text="нболон"/><LineBreak/><Run Text="shop"/></TextBlock>
+            </Grid>
+            <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20, 141.49, 20, 0" Width="227">
+                <Border Style="{DynamicResource BorderStyle1}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="227" Height="66" CornerRadius="30,30,30,30" >
+                    <Grid Background="{x:Null}" >
+                        <Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="/Images/Stack Of Paper.png" Width="36" Height="36" Margin="20, 0, 0, 0" />
+                        <TextBlock  HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20"><Run Text="Все товары"/></TextBlock>
+                    </Grid>
+                </Border>
+                <Border HorizontalAlignment="Center" VerticalAlignment="Top" Width="227" Height="66" Margin="0,76,0,0" CornerRadius="30,30,30,30">
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <LinearGradientBrush.RelativeTransform>
+                                <TransformGroup>
+                                    <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                    <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                                    <RotateTransform Angle="-90" CenterX="0.5" CenterY="0.5"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </LinearGradientBrush.RelativeTransform>
+                            <GradientStop Color="#FFF9C999"/>
+                            <GradientStop Color="#FFFABAB3" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Grid>
+                        <Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="/Soccer Ball.png" Width="36" Height="36" Margin="20, 0, 0, 0" />
+                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20" Foreground="Black"><Run Language="ru-ru" Text="Инвентарь"/></TextBlock>
+                    </Grid>
+                </Border>
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Width="227" Height="66" Margin="0,152,0,0">
+                    <Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="/Images/Jersey.png" Width="36" Height="36" Margin="20, 0, 0, 0" />
+                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20"><Run Language="ru-ru" Text="Одежда"/></TextBlock>
+                </Grid>
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Width="227" Height="66" Margin="0,238,0,0">
+                    <Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="/Images/Roller Skates.png" Width="36" Height="36" Margin="20, 0, 0, 0" />
+                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20"><Run Language="ru-ru" Text="Обувь"/></TextBlock>
+                </Grid>
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Width="227" Height="66" Margin="0,324,0,0">
+                    <Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="/Images/Energy Drink.png" Width="36" Height="36" Margin="20, 0, 0, 0" />
+                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20"><Run Language="ru-ru" Text="Питание"/></TextBlock>
+                </Grid>
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Width="227" Height="66" Margin="0,409,0,0">
+                    <Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="/Images/Bench Press.png" Width="36" Height="36" Margin="20, 0, 0, 0" />
+                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20"><Run Language="ru-ru" Text="Тренажёры"/></TextBlock>
+                </Grid>
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Width="227" Height="66" Margin="0,496,0,0">
+                    <Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="/Images/Knight.png" Width="36" Height="36" Margin="20, 0, 0, 0" />
+                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20"><Run Language="ru-ru" Text="Игры"/></TextBlock>
+                </Grid>
+            </Grid>
+            <Grid HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="20,0,20,60" Width="227" Height="36">
+                <Image HorizontalAlignment="Left" VerticalAlignment="Center" Width="36" Height="36" Source="/Images/Login Rounded.png" Margin="20, 0, 0, 0"/>
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20"><Run Text="Войти"/></TextBlock>
+            </Grid>
         </Grid>
-        <Image Height="443" Width="1441" Source="/image 1 (1).jpg" Stretch="Fill" Margin="0,84,0,0" VerticalAlignment="Top" HorizontalAlignment="Center"/>
-        <TextBlock HorizontalAlignment="Left" Margin="40,581,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Verdana" FontSize="32" FontWeight="Bold" Height="40" Width="220"><Run Language="ru-ru" Text="КАТЕГОРИИ"/><LineBreak/><Run Language="ru-ru"/></TextBlock>
-        <Button Content="Инвентарь" HorizontalAlignment="Left" Margin="40,659,0,0" VerticalAlignment="Top" Height="300" Width="300" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Bottom" Padding="20,0,8,20" FontFamily="Verdana" FontSize="24" Click="Button_Click_1">
-            <Button.Background>
-                <ImageBrush ImageSource="/Frame 4 (1).jpg"/>
-            </Button.Background>
-        </Button>
-        <Button Content="Одежда" HorizontalAlignment="Left" Margin="400,659,0,0" VerticalAlignment="Top" Height="300" Width="300" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Bottom" Padding="20,0,8,20" FontFamily="Verdana" FontSize="24">
-            <Button.Background>
-                <ImageBrush ImageSource="/Frame 5.jpg"/>
-            </Button.Background>
-        </Button>
-        <Button Content="Обувь" HorizontalAlignment="Left" Margin="740,659,0,0" VerticalAlignment="Top" Height="300" Width="300" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Bottom" Padding="20,0,8,20" FontFamily="Verdana" FontSize="24">
-            <Button.Background>
-                <ImageBrush ImageSource="/Frame 6.jpg"/>
-            </Button.Background>
-        </Button>
-        <Button Content="Аксессуары" HorizontalAlignment="Left" Margin="1080,659,0,0" VerticalAlignment="Top" Height="300" Width="300" Foreground="White" HorizontalContentAlignment="Left" VerticalContentAlignment="Bottom" Padding="20,0,8,20" FontFamily="Verdana" FontSize="24">
-            <Button.Background>
-                <ImageBrush ImageSource="/Frame 6 (1).jpg"/>
-            </Button.Background>
-        </Button>
-
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Width="693" Height="926" Margin="0, 32.75, 0, 0">
+            <Border HorizontalAlignment="Center" VerticalAlignment="Top" Width="693" Height="60" CornerRadius="8,8,8,8">
+                <Border.Background>
+                    <ImageBrush ImageSource="/Frame 20.png"/>
+                </Border.Background>
+                <TextBox HorizontalAlignment="Center" TextWrapping="Wrap" Text="Поиск" VerticalAlignment="Top" Width="693" Height="60" VerticalContentAlignment="Center" Padding="70,0,0,0" FontFamily="Verdana" FontSize="24" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FFCDCDCD"/>
+            </Border>
+            <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Width="693" Height="834" Margin="0,92,0,0">
+                <Border BorderThickness="1" HorizontalAlignment="Left" Height="400" VerticalAlignment="Top" Width="300" CornerRadius="8,8,8,8" Background="White">
+                    <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="400">
+                        <Image HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="260" Margin="20,20,0,0" Source="/image 3.jpg" Stretch="Fill"/>
+                        <TextBlock HorizontalAlignment="Left" Height="38" Margin="20,240,0,0" TextWrapping="Wrap" Text="Гантель гексагональная обрезиненная 12,5 кг" VerticalAlignment="Top" Width="260" FontFamily="Verdana" FontSize="16"/>
+                        <TextBlock HorizontalAlignment="Left" Height="21" Margin="20,298,0,0" TextWrapping="Wrap" Text="1299р" VerticalAlignment="Top" Width="51" FontFamily="Verdana" FontSize="16"/>
+                        <Border HorizontalAlignment="Left" Height="41" Margin="20,339,0,0" VerticalAlignment="Top" Width="260" CornerRadius="8,8,8,8" >
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                            <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                                            <RotateTransform Angle="-90" CenterX="0.5" CenterY="0.5"/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#FFF2A65B"/>
+                                    <GradientStop Color="#FFEE7A6E" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Button Content="В корзину" FontFamily="Verdana" FontSize="18" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White"/>
+                        </Border>
+                    </Grid>
+                </Border>
+                <Border BorderThickness="1" HorizontalAlignment="Left" Height="400" VerticalAlignment="Top" Width="300" CornerRadius="8,8,8,8" Background="White" Margin="393,0,0,0">
+                    <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="400">
+                        <Image HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="260" Margin="20,20,0,0" Source="/image 3.jpg" Stretch="Fill"/>
+                        <TextBlock HorizontalAlignment="Left" Height="38" Margin="20,240,0,0" TextWrapping="Wrap" Text="Гантель гексагональная обрезиненная 12,5 кг" VerticalAlignment="Top" Width="260" FontFamily="Verdana" FontSize="16"/>
+                        <TextBlock HorizontalAlignment="Left" Height="21" Margin="20,298,0,0" TextWrapping="Wrap" Text="1299р" VerticalAlignment="Top" Width="51" FontFamily="Verdana" FontSize="16"/>
+                        <Border HorizontalAlignment="Left" Height="41" Margin="20,339,0,0" VerticalAlignment="Top" Width="260" CornerRadius="8,8,8,8" >
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                            <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                                            <RotateTransform Angle="-90" CenterX="0.5" CenterY="0.5"/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#FFF2A65B"/>
+                                    <GradientStop Color="#FFEE7A6E" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Button Content="В корзину" FontFamily="Verdana" FontSize="18" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White"/>
+                        </Border>
+                    </Grid>
+                </Border>
+                <Border BorderThickness="1" HorizontalAlignment="Left" Height="400" VerticalAlignment="Top" Width="300" CornerRadius="8,8,8,8" Background="White" Margin="0,434,0,0">
+                    <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="400">
+                        <Image HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="260" Margin="20,20,0,0" Source="/image 3.jpg" Stretch="Fill"/>
+                        <TextBlock HorizontalAlignment="Left" Height="38" Margin="20,240,0,0" TextWrapping="Wrap" Text="Гантель гексагональная обрезиненная 12,5 кг" VerticalAlignment="Top" Width="260" FontFamily="Verdana" FontSize="16"/>
+                        <TextBlock HorizontalAlignment="Left" Height="21" Margin="20,298,0,0" TextWrapping="Wrap" Text="1299р" VerticalAlignment="Top" Width="51" FontFamily="Verdana" FontSize="16"/>
+                        <Border HorizontalAlignment="Left" Height="41" Margin="20,339,0,0" VerticalAlignment="Top" Width="260" CornerRadius="8,8,8,8" >
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                            <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                                            <RotateTransform Angle="-90" CenterX="0.5" CenterY="0.5"/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#FFF2A65B"/>
+                                    <GradientStop Color="#FFEE7A6E" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Button Content="В корзину" FontFamily="Verdana" FontSize="18" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White"/>
+                        </Border>
+                    </Grid>
+                </Border>
+                <Border BorderThickness="1" HorizontalAlignment="Left" Height="400" VerticalAlignment="Top" Width="300" CornerRadius="8,8,8,8" Background="White" Margin="393,434,0,0">
+                    <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="400">
+                        <Image HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="260" Margin="20,20,0,0" Source="/image 3.jpg" Stretch="Fill"/>
+                        <TextBlock HorizontalAlignment="Left" Height="38" Margin="20,240,0,0" TextWrapping="Wrap" Text="Гантель гексагональная обрезиненная 12,5 кг" VerticalAlignment="Top" Width="260" FontFamily="Verdana" FontSize="16"/>
+                        <TextBlock HorizontalAlignment="Left" Height="21" Margin="20,298,0,0" TextWrapping="Wrap" Text="1299р" VerticalAlignment="Top" Width="51" FontFamily="Verdana" FontSize="16"/>
+                        <Border HorizontalAlignment="Left" Height="41" Margin="20,339,0,0" VerticalAlignment="Top" Width="260" CornerRadius="8,8,8,8" >
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                            <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                                            <RotateTransform Angle="-90" CenterX="0.5" CenterY="0.5"/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#FFF2A65B"/>
+                                    <GradientStop Color="#FFEE7A6E" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Button Content="В корзину" FontFamily="Verdana" FontSize="18" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White"/>
+                        </Border>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>

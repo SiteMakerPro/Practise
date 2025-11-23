@@ -58,12 +58,6 @@
     <Compile Include="AdminPanel.xaml.cs">
       <DependentUpon>AdminPanel.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Catalog.xaml.cs">
-      <DependentUpon>Catalog.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="CatalogInvent.xaml.cs">
-      <DependentUpon>CatalogInvent.xaml</DependentUpon>
-    </Compile>
     <Compile Include="LogIn.xaml.cs">
       <DependentUpon>LogIn.xaml</DependentUpon>
     </Compile>
@@ -77,14 +71,6 @@
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
     <Page Include="AdminPanel.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Catalog.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="CatalogInvent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -144,33 +130,66 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="image 1.jpg" />
+    <Resource Include="Images\image 1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Frame 6 %281%29.jpg" />
-    <Resource Include="Frame 6.jpg" />
-    <Resource Include="Frame 5.jpg" />
-    <Resource Include="Frame 4 %281%29.jpg" />
-    <Resource Include="Frame 4.jpg" />
-    <Resource Include="image2.png" />
+    <Resource Include="Images\Frame 6 %281%29.jpg" />
+    <Resource Include="Images\Frame 6.jpg" />
+    <Resource Include="Images\Frame 5.jpg" />
+    <Resource Include="Images\Frame 4 %281%29.jpg" />
+    <Resource Include="Images\Frame 4.jpg" />
+    <Resource Include="Images\logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Search.png" />
+    <Resource Include="Images\Search.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Account Male.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="image 1 %281%29.jpg" />
+    <Resource Include="Images\image 1 %281%29.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Close.png" />
+    <Resource Include="Images\Close.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Logout.png" />
+    <Resource Include="Images\Logout.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="image 2.jpg" />
+    <Resource Include="Images\image 2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Stack Of Paper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Soccer Ball.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Jersey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Roller Skates.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Energy Drink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Bench Press.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Knight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Login Rounded.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Soccer Ball.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Frame 20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image 3.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

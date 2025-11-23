@@ -34,9 +34,9 @@ namespace WpfApp1
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            CatalogInvent catalogInvent = new CatalogInvent();
-            catalogInvent.Show();
-            this.Close();
+            //CatalogInvent catalogInvent = new CatalogInvent();
+            //catalogInvent.Show();
+            //this.Close();
         }
     }
 }
