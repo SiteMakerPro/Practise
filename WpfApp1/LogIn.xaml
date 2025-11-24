@@ -293,10 +293,10 @@
                     <Grid HorizontalAlignment="Left" Height="650" Margin="0,150,0,0" VerticalAlignment="Top" Width="600">
                         <Grid HorizontalAlignment="Center" Height="200" Margin="0,152,0,0" VerticalAlignment="Top" Width="520">
                             <Border HorizontalAlignment="Center" Height="80" Margin="0,0,0,0" VerticalAlignment="Top" Width="520" Background="#FFEFEFEF" CornerRadius="8,8,8,8" >
-                                <TextBox x:Name="loginInput" TextWrapping="Wrap" Text="Логин" FontFamily="Verdana" FontSize="24" VerticalContentAlignment="Center" Padding="30,0,0,0" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FFCDCDCD"/>
+                                <TextBox x:Name="loginInput" TextWrapping="Wrap" Text="Логин" FontFamily="Verdana" FontSize="24" VerticalContentAlignment="Center" Padding="30,0,0,0" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FFCDCDCD" PreviewMouseLeftButtonDown="loginInput_PreviewMouseLeftButtonDown"/>
                             </Border>
                             <Border HorizontalAlignment="Center" Height="80" Margin="0,0,0,0" VerticalAlignment="Bottom" Width="520" Background="#FFEFEFEF" CornerRadius="8,8,8,8" >
-                                <TextBox x:Name="passwordInput" TextWrapping="Wrap" Text="Пароль" FontFamily="Verdana" FontSize="24" VerticalContentAlignment="Center" Padding="30,0,0,0" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FFCDCDCD"/>
+                                <TextBox x:Name="passwordInput" TextWrapping="Wrap" Text="Пароль" FontFamily="Verdana" FontSize="24" VerticalContentAlignment="Center" Padding="30,0,0,0" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FFCDCDCD" PreviewMouseLeftButtonDown="passwordInput_PreviewMouseLeftButtonDown"/>
                             </Border>
                         </Grid>
                         <Grid HorizontalAlignment="Center" Height="104" Margin="0,474,0,0" VerticalAlignment="Top" Width="520">

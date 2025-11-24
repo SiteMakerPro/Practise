@@ -37,5 +37,53 @@ namespace WpfApp1
             login.Show();
             this.Close();
         }
+
+        private void loginInput_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (loginInput.Text == "Логин")
+            {
+                loginInput.Text = "";
+            }
+            if (passwordInput.Text == "")
+            {
+                passwordInput.Text = "Пароль";
+            }
+            if (confirmPassword.Text == "")
+            {
+                confirmPassword.Text = "Подтвердить пароль";
+            }
+        }
+
+        private void passwordInput_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (passwordInput.Text == "Пароль")
+            {
+                passwordInput.Text = "";
+            }
+            if (loginInput.Text == "")
+            {
+                loginInput.Text = "Логин";
+            }
+            if (confirmPassword.Text == "")
+            {
+                confirmPassword.Text = "Подтвердить пароль";
+            }
+        }
+
+        private void confirmPassword_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (confirmPassword.Text == "Подтвердить пароль")
+            {
+                confirmPassword.Text = "";
+            }
+            if (loginInput.Text == "")
+            {
+                loginInput.Text = "Логин";
+            }
+            if (passwordInput.Text == "")
+            {
+                passwordInput.Text = "Пароль";
+            }
+        }
     }
 }
