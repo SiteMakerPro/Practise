@@ -194,5 +194,11 @@
   <ItemGroup>
     <Resource Include="image 4.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Bank Cards.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Qr Code.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
