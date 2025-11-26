@@ -210,7 +210,7 @@
     <Resource Include="Frame 20.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="image 3.jpg" />
+    <Resource Include="Images\good.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="image 4.jpg" />
