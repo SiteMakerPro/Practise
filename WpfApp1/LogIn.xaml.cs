@@ -79,15 +79,15 @@ namespace WpfApp1
 
         //private void Button_Click_1(object sender, RoutedEventArgs e)
         //{
-        //    if (loginInput.Text.Length > 0)
+        //    if (loginInput.Price.Length > 0)
         //    {
-        //        if (loginInput.Text == "admin")
+        //        if (loginInput.Price == "admin")
         //        {
         //            AdminPanel adminPanel = new AdminPanel();
         //            adminPanel.Show();
         //            this.Close();
         //        }
-        //        else if (loginInput.Text == "manager")
+        //        else if (loginInput.Price == "manager")
         //        {
         //            Manager manager = new Manager();
         //            manager.Show();
@@ -98,9 +98,9 @@ namespace WpfApp1
 
         //private void loginInput_MouseEnter(object sender, MouseEventArgs e)
         //{
-        //    if (loginInput.Text == "Логин" && passwordInput.Text == "12345")
+        //    if (loginInput.Price == "Логин" && passwordInput.Price == "12345")
         //    {
-        //        loginInput.Text = "";
+        //        loginInput.Price = "";
         //    }
         //}
 
@@ -108,15 +108,15 @@ namespace WpfApp1
         //{
         //    if (e.Key == Key.Enter)
         //    {
-        //        if (loginInput.Text.Length > 0)
+        //        if (loginInput.Price.Length > 0)
         //        {
-        //            if (loginInput.Text == "admin")
+        //            if (loginInput.Price == "admin")
         //            {
         //                AdminPanel adminPanel = new AdminPanel();
         //                adminPanel.Show();
         //                this.Close();
         //            }
-        //            else if (loginInput.Text == "manager")
+        //            else if (loginInput.Price == "manager")
         //            {
         //                Manager manager = new Manager();
         //                manager.Show();
