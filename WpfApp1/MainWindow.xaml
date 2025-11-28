@@ -24,58 +24,44 @@
                 </Grid>
                 <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Typography.Capitals="AllSmallCaps" VerticalAlignment="Center" FontFamily="Verdana" FontSize="28"><Run Text="Тр"/><Run Language="ru-ru" Text="е"/><Run Text="нболон"/><LineBreak/><Run Text="shop"/></TextBlock>
             </Grid>
-            <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20, 141.49, 20, 0" Width="227">
-                <Border Style="{DynamicResource BorderStyle1}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="227" Height="66" CornerRadius="30,30,30,30" >
+            <Grid x:Name="menu" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20, 141.49, 20, 0" Width="227">
+                <Border x:Name="allGoods" Style="{DynamicResource BorderStyle1}" VerticalAlignment="Top" Height="66" CornerRadius="30,30,30,30" PreviewMouseLeftButtonDown="allGoods_PreviewMouseLeftButtonDown" >
                     <Grid Background="{x:Null}" >
                         <Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="/Images/Stack Of Paper.png" Width="36" Height="36" Margin="20, 0, 0, 0" />
                         <TextBlock  HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20"><Run Text="Все товары"/></TextBlock>
                     </Grid>
                 </Border>
-                <Border HorizontalAlignment="Center" VerticalAlignment="Top" Width="227" Height="66" Margin="0,76,0,0" CornerRadius="30,30,30,30">
-                    <Border.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <LinearGradientBrush.RelativeTransform>
-                                <TransformGroup>
-                                    <ScaleTransform CenterY="0.5" CenterX="0.5"/>
-                                    <SkewTransform CenterX="0.5" CenterY="0.5"/>
-                                    <RotateTransform Angle="-90" CenterX="0.5" CenterY="0.5"/>
-                                    <TranslateTransform/>
-                                </TransformGroup>
-                            </LinearGradientBrush.RelativeTransform>
-                            <GradientStop Color="#FFF9C999"/>
-                            <GradientStop Color="#FFFABAB3" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Border.Background>
+                <Border x:Name="invent" Style="{DynamicResource BorderStyle1}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="227" Height="66" Margin="0,76,0,0" CornerRadius="30,30,30,30" PreviewMouseLeftButtonDown="Border_PreviewMouseLeftButtonDown">
                     <Grid>
                         <Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="/Soccer Ball.png" Width="36" Height="36" Margin="20, 0, 0, 0" />
                         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20" Foreground="Black"><Run Language="ru-ru" Text="Инвентарь"/></TextBlock>
                     </Grid>
                 </Border>
-                <Border Style="{DynamicResource BorderStyle1}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="227" Height="66" Margin="0,152,0,0" CornerRadius="30,30,30,30">
+                <Border x:Name="clothes" Style="{DynamicResource BorderStyle1}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="227" Height="66" Margin="0,152,0,0" CornerRadius="30,30,30,30" PreviewMouseLeftButtonDown="clothes_PreviewMouseLeftButtonDown">
                     <Grid>
                         <Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="/Images/Jersey.png" Width="36" Height="36" Margin="20, 0, 0, 0" />
                         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20"><Run Language="ru-ru" Text="Одежда"/></TextBlock>
                     </Grid>
                 </Border>
-                <Border Style="{DynamicResource BorderStyle1}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="227" Height="66" Margin="0,238,0,0" CornerRadius="30,30,30,30">
+                <Border x:Name="shoes" Style="{DynamicResource BorderStyle1}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="227" Height="66" Margin="0,238,0,0" CornerRadius="30,30,30,30" PreviewMouseLeftButtonDown="shoes_PreviewMouseLeftButtonDown">
                     <Grid>
                         <Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="/Images/Roller Skates.png" Width="36" Height="36" Margin="20, 0, 0, 0" />
                         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20"><Run Language="ru-ru" Text="Обувь"/></TextBlock>
                     </Grid>
                 </Border>
-                <Border Style="{DynamicResource BorderStyle1}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="227" Height="66" Margin="0,324,0,0" CornerRadius="30,30,30,30">
+                <Border x:Name="food" Style="{DynamicResource BorderStyle1}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="227" Height="66" Margin="0,324,0,0" CornerRadius="30,30,30,30" PreviewMouseLeftButtonDown="food_PreviewMouseLeftButtonDown">
                     <Grid>
                         <Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="/Images/Energy Drink.png" Width="36" Height="36" Margin="20, 0, 0, 0" />
                         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20"><Run Language="ru-ru" Text="Питание"/></TextBlock>
                     </Grid>
                 </Border>
-                <Border Style="{DynamicResource BorderStyle1}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="227" Height="66" Margin="0,409,0,0" CornerRadius="30,30,30,30">
+                <Border x:Name="trainer" Style="{DynamicResource BorderStyle1}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="227" Height="66" Margin="0,409,0,0" CornerRadius="30,30,30,30" PreviewMouseLeftButtonDown="trainer_PreviewMouseLeftButtonDown">
                     <Grid>
                         <Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="/Images/Bench Press.png" Width="36" Height="36" Margin="20, 0, 0, 0" />
                         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20"><Run Language="ru-ru" Text="Тренажёры"/></TextBlock>
                     </Grid>
                 </Border>
-                <Border Style="{DynamicResource BorderStyle1}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="227" Height="66" Margin="0,496,0,0" CornerRadius="30,30,30,30">
+                <Border x:Name="games" Style="{DynamicResource BorderStyle1}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="227" Height="66" Margin="0,496,0,0" CornerRadius="30,30,30,30" PreviewMouseLeftButtonDown="games_PreviewMouseLeftButtonDown">
                     <Grid>
                         <Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="/Images/Knight.png" Width="36" Height="36" Margin="20, 0, 0, 0" />
                         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20"><Run Language="ru-ru" Text="Игры"/></TextBlock>

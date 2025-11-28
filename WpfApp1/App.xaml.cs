@@ -45,21 +45,65 @@ namespace WpfApp1
                 BigImagePath = bigImagePath;
             }
         }
+        public string category = "Инвентарь";
+        public class Category
+        {
+            public string Name { get; set; }
+            public bool Status { get; set; }
+
+            public Category(string name, bool status)
+            {
+                Name = name;
+                Status = status;
+            }
+        }
+
+        public ObservableCollection<Category> categories { get; set; }
+
+        //public App()
+        //{
+        //    categories = new ObservableCollection<Category>
+        //    {
+        //        new Category("Все товары", true),
+        //        new Category("Инвентарь", false),
+        //        new Category("Одежда", false),
+        //        new Category("Обувь", false),
+        //        new Category("Питание", false),
+        //        new Category("Тренажёры", false),
+        //        new Category("Игры", false),
+        //    };
+        //}
         public static App CurrentApp => (App)Current;
+        public ObservableCollection<Card> DataCard { get; set; }
+
         public void createCard(ObservableCollection<Card> Cards, Grid block)
         {
+            block.Children.Clear();
+            DataCard = new ObservableCollection<Card> { };
+
             bool text = true;
 
             foreach (Card card in Cards)
             {
                 if (card.Text == null) text = false;
             }
-            for (int i = 0, count = 0; i < (Cards.Count + 1) / 2 || count <= Cards.Count - 1; i++)
+            foreach (Card card in Cards)
             {
-                for (int j = 0; count <= Cards.Count - 1 && j < 2; j++, count++)
+                if (card.Category == category)
+                {
+                    DataCard.Add(card);
+                }
+                else if (category == "Все товары")
+                {
+                    DataCard.Add(card);
+                }
+            }
+            for (int i = 0, count = 0; i < (DataCard.Count + 1) / 2 || count <= DataCard.Count - 1; i++)
+            {
+                for (int j = 0; count <= DataCard.Count - 1 && j < 2; j++, count++)
                 {
                     Border card = new Border();
-                    var id = Cards[count].Id;
+                    var id = DataCard[count].Id;
                     card.Name = $"card{id}";
                     card.BorderThickness = new Thickness(1);
                     card.CornerRadius = new CornerRadius(8);
@@ -76,7 +120,7 @@ namespace WpfApp1
                     cardImage.Height = 200;
                     cardImage.Margin = new Thickness(20, 20, 0, 0);
                     cardImage.Stretch = Stretch.Fill;
-                    cardImage.Source = new BitmapImage(new Uri(Cards[count].BigImagePath));
+                    cardImage.Source = new BitmapImage(new Uri(DataCard[count].BigImagePath));
                     cardGrid.Children.Add(cardImage);
 
                     TextBlock cardTitle = new TextBlock();
@@ -87,7 +131,7 @@ namespace WpfApp1
                     cardTitle.Margin = new Thickness(20, 240, 0, 0);
                     cardTitle.FontFamily = new FontFamily("Verdana");
                     cardTitle.FontSize = 16;
-                    cardTitle.Text = Cards[count].Title;
+                    cardTitle.Text = DataCard[count].Title;
                     cardTitle.TextWrapping = TextWrapping.Wrap;
                     cardGrid.Children.Add(cardTitle);
 
@@ -101,7 +145,7 @@ namespace WpfApp1
                         cardText.Margin = new Thickness(20, 298, 0, 0);
                         cardText.FontFamily = new FontFamily("Verdana");
                         cardText.FontSize = 16;
-                        cardText.Text = $"{Cards[count].Text}";
+                        cardText.Text = $"{DataCard[count].Text}";
                         cardGrid.Children.Add(cardText);
                     }
                     else
@@ -114,7 +158,7 @@ namespace WpfApp1
                         cardPrice.Margin = new Thickness(20, 298, 0, 0);
                         cardPrice.FontFamily = new FontFamily("Verdana");
                         cardPrice.FontSize = 16;
-                        cardPrice.Text = $"{Cards[count].Price}р.";
+                        cardPrice.Text = $"{DataCard[count].Price}р.";
                         cardGrid.Children.Add(cardPrice);
                     }
 

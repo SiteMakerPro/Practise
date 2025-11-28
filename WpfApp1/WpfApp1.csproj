@@ -61,6 +61,9 @@
     <Compile Include="AdminPanel.xaml.cs">
       <DependentUpon>AdminPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Delivery.xaml.cs">
+      <DependentUpon>Delivery.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LogIn.xaml.cs">
       <DependentUpon>LogIn.xaml</DependentUpon>
     </Compile>
@@ -73,6 +76,12 @@
     <Compile Include="Page2.xaml.cs">
       <DependentUpon>Page2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Profile.xaml.cs">
+      <DependentUpon>Profile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PVZ.xaml.cs">
+      <DependentUpon>PVZ.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
@@ -84,6 +93,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AdminPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Delivery.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -112,6 +125,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Page2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Profile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PVZ.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -232,6 +253,33 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="image 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Big Parcel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="People.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Order History.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Order Completed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Home Page.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\clothes.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

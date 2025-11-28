@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp1.Properties;
 
 namespace WpfApp1
 {
@@ -34,7 +35,8 @@ namespace WpfApp1
                 new App.Card(1, "Гантель гексагональная обрезиненная 12,5 кг", "Инвентарь", "pack://application:,,,/Images/good.jpg", 1299 ),
                 new App.Card(2, "Гантель гексагональная обрезиненная 25 кг", "Инвентарь", "pack://application:,,,/Images/good.jpg", 1299 ),
                 new App.Card(3, "Гантель гексагональная обрезиненная 50 кг", "Инвентарь", "pack://application:,,,/Images/good.jpg", 1299 ),
-                new App.Card(4, "Гантель гексагональная обрезиненная 100 кг", "Инвентарь", "pack://application:,,,/Images/good.jpg", 1299 )
+                new App.Card(4, "Гантель гексагональная обрезиненная 100 кг", "Инвентарь", "pack://application:,,,/Images/good.jpg", 1299 ),
+                new App.Card(5, "Гантель гексагональная обрезиненная 100 кг", "Одежда", "pack://application:,,,/Images/clothes.jpg", 999 )
             };
         }
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -46,6 +48,123 @@ namespace WpfApp1
 
         private void Window_Activated(object sender, EventArgs e)
         {
+            App.CurrentApp.category = "Все товары";
+            App.CurrentApp.createCard(Goods, catalog);
+            foreach (var elem in menu.Children.OfType<Border>())
+            {
+                if (elem.Name != "allGoods")
+                {
+                    //elem.Background = new SolidColorBrush(Colors.White);
+                    elem.Style = (Style)Application.Current.FindResource("BorderStyle1");
+                }
+            }
+            allGoods.Style = (Style)Application.Current.FindResource("BtnActivated");
+            App.CurrentApp.category = "Инвентарь";
+            App.CurrentApp.createCard(Goods, catalog);
+        }
+
+        private void Border_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            foreach (var elem in menu.Children.OfType<Border>())
+            {
+                if (elem.Name != "invent")
+                {
+                    //elem.Background = new SolidColorBrush(Colors.White);
+                    elem.Style = (Style)Application.Current.FindResource("BorderStyle1");
+                }
+            }
+            invent.Style = (Style)Application.Current.FindResource("BtnActivated");
+            App.CurrentApp.category = "Инвентарь";
+            App.CurrentApp.createCard(Goods, catalog);
+        }
+
+        private void allGoods_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            foreach (var elem in menu.Children.OfType<Border>())
+            {
+                if (elem.Name != "allGoods")
+                {
+                    //elem.Background = new SolidColorBrush(Colors.White);
+                    elem.Style = (Style)Application.Current.FindResource("BorderStyle1");
+                }
+            }
+            allGoods.Style = (Style)Application.Current.FindResource("BtnActivated");
+            App.CurrentApp.category = "Все товары";
+            App.CurrentApp.createCard(Goods, catalog);
+        }
+
+        private void clothes_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            foreach (var elem in menu.Children.OfType<Border>())
+            {
+                if (elem.Name != "clothes")
+                {
+                    //elem.Background = new SolidColorBrush(Colors.White);
+                    elem.Style = (Style)Application.Current.FindResource("BorderStyle1");
+                }
+            }
+            clothes.Style = (Style)Application.Current.FindResource("BtnActivated");
+            App.CurrentApp.category = "Одежда";
+            App.CurrentApp.createCard(Goods, catalog);
+        }
+
+        private void shoes_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            foreach (var elem in menu.Children.OfType<Border>())
+            {
+                if (elem.Name != "shoes")
+                {
+                    //elem.Background = new SolidColorBrush(Colors.White);
+                    elem.Style = (Style)Application.Current.FindResource("BorderStyle1");
+                }
+            }
+            shoes.Style = (Style)Application.Current.FindResource("BtnActivated");
+            App.CurrentApp.category = "Обувь";
+            App.CurrentApp.createCard(Goods, catalog);
+        }
+
+        private void food_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            foreach (var elem in menu.Children.OfType<Border>())
+            {
+                if (elem.Name != "food")
+                {
+                    //elem.Background = new SolidColorBrush(Colors.White);
+                    elem.Style = (Style)Application.Current.FindResource("BorderStyle1");
+                }
+            }
+            food.Style = (Style)Application.Current.FindResource("BtnActivated");
+            App.CurrentApp.category = "Питание";
+            App.CurrentApp.createCard(Goods, catalog);
+        }
+
+        private void trainer_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            foreach (var elem in menu.Children.OfType<Border>())
+            {
+                if (elem.Name != "trainer")
+                {
+                    //elem.Background = new SolidColorBrush(Colors.White);
+                    elem.Style = (Style)Application.Current.FindResource("BorderStyle1");
+                }
+            }
+            trainer.Style = (Style)Application.Current.FindResource("BtnActivated");
+            App.CurrentApp.category = "Тренажёры";
+            App.CurrentApp.createCard(Goods, catalog);
+        }
+
+        private void games_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            foreach (var elem in menu.Children.OfType<Border>())
+            {
+                if (elem.Name != "games")
+                {
+                    //elem.Background = new SolidColorBrush(Colors.White);
+                    elem.Style = (Style)Application.Current.FindResource("BorderStyle1");
+                }
+            }
+            games.Style = (Style)Application.Current.FindResource("BtnActivated");
+            App.CurrentApp.category = "Игры";
             App.CurrentApp.createCard(Goods, catalog);
         }
 

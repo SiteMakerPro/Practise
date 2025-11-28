@@ -1,12 +1,12 @@
-﻿<Window x:Class="WpfApp1.Admin"
+﻿<Window x:Class="WpfApp1.Delivery"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="Admin" Height="1024" Width="1440">
-    <Grid Width="1440" Height="1024" Background="#FFEEEEEE">
+        Title="Delivery" Height="1024" Width="1440" Background="#FFEEEEEE">
+    <Grid Width="1440" Height="1024">
         <Grid HorizontalAlignment="Left" Height="1024" VerticalAlignment="Center" Width="267" Background="White">
             <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,20,20,0" Width="227" Height="81.49">
                 <Grid HorizontalAlignment="Left" Height="60" VerticalAlignment="Center" Width="60" RenderTransformOrigin="0.5,0.5">
@@ -25,8 +25,8 @@
             <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20, 141.49, 20, 0" Width="227">
                 <Border Style="{DynamicResource BorderStyle1}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="227" Height="66" CornerRadius="30,30,30,30" >
                     <Grid Background="{x:Null}" >
-                        <Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="/Big Parcel.png" Width="36" Height="36" Margin="20, 0, 0, 0" />
-                        <TextBlock  HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20"><Run Language="ru-ru" Text="Товары"/></TextBlock>
+                        <Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="/Order Completed.png" Width="36" Height="36" Margin="20, 0, 0, 0" />
+                        <TextBlock  HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20" Text="Заказы"/>
                     </Grid>
                 </Border>
                 <Border HorizontalAlignment="Center" VerticalAlignment="Top" Width="227" Height="66" Margin="0,76,0,0" CornerRadius="30,30,30,30">
@@ -45,20 +45,8 @@
                         </LinearGradientBrush>
                     </Border.Background>
                     <Grid>
-                        <Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="/People.png" Width="36" Height="36" Margin="20, 0, 0, 0" />
-                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20" Foreground="Black" Text="Сотрудники"/>
-                    </Grid>
-                </Border>
-                <Border Style="{DynamicResource BorderStyle1}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="227" Height="66" Margin="0,152,0,0" CornerRadius="30,30,30,30">
-                    <Grid>
-                        <Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="/Group.png" Width="36" Height="36" Margin="20, 0, 0, 0" />
-                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20" Text="Клиенты"/>
-                    </Grid>
-                </Border>
-                <Border Style="{DynamicResource BorderStyle1}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="227" Height="66" Margin="0,238,0,0" CornerRadius="30,30,30,30">
-                    <Grid>
-                        <Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="/Order History.png" Width="36" Height="36" Margin="20, 0, 0, 0" />
-                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20" Text="Заказы"/>
+                        <Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="/Big Parcel.png" Width="36" Height="36" Margin="20, 0, 0, 0" />
+                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20" Foreground="Black" Text="Товары"/>
                     </Grid>
                 </Border>
             </Grid>
@@ -79,9 +67,9 @@
             <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Width="693" Height="834" Margin="0,92,0,0">
                 <Border BorderThickness="1" HorizontalAlignment="Left" Height="400" VerticalAlignment="Top" Width="300" CornerRadius="8,8,8,8" Background="White">
                     <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="400">
-                        <Image HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="260" Margin="20,20,0,0" Source="/image 2.png" Stretch="Fill"/>
-                        <TextBlock HorizontalAlignment="Left" Height="19" Margin="20,240,0,0" TextWrapping="Wrap" Text="Ктотов Ктото Ктотович" VerticalAlignment="Top" Width="260" FontFamily="Verdana" FontSize="16"/>
-                        <TextBlock HorizontalAlignment="Left" Height="21" Margin="20,298,0,0" TextWrapping="Wrap" Text="Оператор ПВЗ" VerticalAlignment="Top" Width="120" FontFamily="Verdana" FontSize="16"/>
+                        <Image HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="260" Margin="20,20,0,0" Source="/box.png" Stretch="Fill"/>
+                        <TextBlock HorizontalAlignment="Left" Height="19" Margin="20,240,0,0" TextWrapping="Wrap" Text="Заказ" VerticalAlignment="Top" Width="260" FontFamily="Verdana" FontSize="16"/>
+                        <TextBlock HorizontalAlignment="Left" Height="21" Margin="20,298,0,0" TextWrapping="Wrap" Text="№1" VerticalAlignment="Top" Width="120" FontFamily="Verdana" FontSize="16"/>
                         <Border HorizontalAlignment="Left" Height="41" Margin="20,339,0,0" VerticalAlignment="Top" Width="260" CornerRadius="8,8,8,8" >
                             <Border.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -103,9 +91,9 @@
                 </Border>
                 <Border BorderThickness="1" HorizontalAlignment="Left" Height="400" VerticalAlignment="Top" Width="300" CornerRadius="8,8,8,8" Background="White" Margin="393,0,0,0">
                     <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="400">
-                        <Image HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="260" Margin="20,20,0,0" Source="/image 2.png" Stretch="Fill"/>
-                        <TextBlock HorizontalAlignment="Left" Height="19" Margin="20,240,0,0" TextWrapping="Wrap" Text="Ктотов Ктото Ктотович" VerticalAlignment="Top" Width="260" FontFamily="Verdana" FontSize="16"/>
-                        <TextBlock HorizontalAlignment="Left" Height="21" Margin="20,298,0,0" TextWrapping="Wrap" Text="Оператор ПВЗ" VerticalAlignment="Top" Width="120" FontFamily="Verdana" FontSize="16"/>
+                        <Image HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="260" Margin="20,20,0,0" Source="/box.png" Stretch="Fill"/>
+                        <TextBlock HorizontalAlignment="Left" Height="19" Margin="20,240,0,0" TextWrapping="Wrap" Text="Заказ" VerticalAlignment="Top" Width="260" FontFamily="Verdana" FontSize="16"/>
+                        <TextBlock HorizontalAlignment="Left" Height="21" Margin="20,298,0,0" TextWrapping="Wrap" Text="№1" VerticalAlignment="Top" Width="120" FontFamily="Verdana" FontSize="16"/>
                         <Border HorizontalAlignment="Left" Height="41" Margin="20,339,0,0" VerticalAlignment="Top" Width="260" CornerRadius="8,8,8,8" >
                             <Border.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -127,9 +115,9 @@
                 </Border>
                 <Border BorderThickness="1" HorizontalAlignment="Left" Height="400" VerticalAlignment="Top" Width="300" CornerRadius="8,8,8,8" Background="White" Margin="0,434,0,0">
                     <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="400">
-                        <Image HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="260" Margin="20,20,0,0" Source="/image 2.png" Stretch="Fill"/>
-                        <TextBlock HorizontalAlignment="Left" Height="19" Margin="20,240,0,0" TextWrapping="Wrap" Text="Ктотов Ктото Ктотович" VerticalAlignment="Top" Width="260" FontFamily="Verdana" FontSize="16"/>
-                        <TextBlock HorizontalAlignment="Left" Height="21" Margin="20,298,0,0" TextWrapping="Wrap" Text="Доставщик" VerticalAlignment="Top" Width="120" FontFamily="Verdana" FontSize="16"/>
+                        <Image HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="260" Margin="20,20,0,0" Source="/box.png" Stretch="Fill"/>
+                        <TextBlock HorizontalAlignment="Left" Height="19" Margin="20,240,0,0" TextWrapping="Wrap" Text="Заказ" VerticalAlignment="Top" Width="260" FontFamily="Verdana" FontSize="16"/>
+                        <TextBlock HorizontalAlignment="Left" Height="21" Margin="20,298,0,0" TextWrapping="Wrap" Text="№1" VerticalAlignment="Top" Width="120" FontFamily="Verdana" FontSize="16"/>
                         <Border HorizontalAlignment="Left" Height="41" Margin="20,339,0,0" VerticalAlignment="Top" Width="260" CornerRadius="8,8,8,8" >
                             <Border.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -151,9 +139,9 @@
                 </Border>
                 <Border BorderThickness="1" HorizontalAlignment="Left" Height="400" VerticalAlignment="Top" Width="300" CornerRadius="8,8,8,8" Background="White" Margin="393,434,0,0">
                     <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Height="400">
-                        <Image HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="260" Margin="20,20,0,0" Source="/image 2.png" Stretch="Fill"/>
-                        <TextBlock HorizontalAlignment="Left" Height="19" Margin="20,240,0,0" TextWrapping="Wrap" Text="Ктотов Ктото Ктотович" VerticalAlignment="Top" Width="260" FontFamily="Verdana" FontSize="16"/>
-                        <TextBlock HorizontalAlignment="Left" Height="21" Margin="20,298,0,0" TextWrapping="Wrap" Text="Доставщик" VerticalAlignment="Top" Width="120" FontFamily="Verdana" FontSize="16"/>
+                        <Image HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="260" Margin="20,20,0,0" Source="/box.png" Stretch="Fill"/>
+                        <TextBlock HorizontalAlignment="Left" Height="19" Margin="20,240,0,0" TextWrapping="Wrap" Text="Заказ" VerticalAlignment="Top" Width="260" FontFamily="Verdana" FontSize="16"/>
+                        <TextBlock HorizontalAlignment="Left" Height="21" Margin="20,298,0,0" TextWrapping="Wrap" Text="№1" VerticalAlignment="Top" Width="120" FontFamily="Verdana" FontSize="16"/>
                         <Border HorizontalAlignment="Left" Height="41" Margin="20,339,0,0" VerticalAlignment="Top" Width="260" CornerRadius="8,8,8,8" >
                             <Border.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -177,27 +165,21 @@
         </Grid>
         <Grid HorizontalAlignment="Left" Height="1024" VerticalAlignment="Center" Width="384" Background="White" Margin="1056,0,0,0">
             <Border HorizontalAlignment="Center" Height="80.75" VerticalAlignment="Top" Width="384" BorderThickness="0,0,0,2" BorderBrush="#FFCDCDCD" >
-                <TextBlock TextWrapping="Wrap" FontFamily="Verdana" FontSize="24" Padding="21,21,0,0" Height="80.75" Text="Изменение данных"></TextBlock>
+                <TextBlock TextWrapping="Wrap" FontFamily="Verdana" FontSize="24" Padding="21,21,0,0" Height="80.75" Text="Информация о заказе"/>
             </Border>
-            <Border HorizontalAlignment="Center" Height="63" VerticalAlignment="Bottom" Width="324" Margin="0,0,0,60" CornerRadius="8,8,8,8" >
-                <Border.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <LinearGradientBrush.RelativeTransform>
-                            <TransformGroup>
-                                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
-                                <SkewTransform CenterX="0.5" CenterY="0.5"/>
-                                <RotateTransform Angle="-90" CenterX="0.5" CenterY="0.5"/>
-                                <TranslateTransform/>
-                            </TransformGroup>
-                        </LinearGradientBrush.RelativeTransform>
-                        <GradientStop Color="#FFF2A65B"/>
-                        <GradientStop Color="#FFEE7A6E" Offset="1"/>
-                    </LinearGradientBrush>
-                </Border.Background>
-                <Button Content="Изменить" FontFamily="Verdana" FontSize="20" BorderThickness="0,0,0,0" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="White"/>
-            </Border>
-            <Grid HorizontalAlignment="Center" Height="379" Margin="0,120.75,0,0" VerticalAlignment="Top" Width="344">
-                <Label Content="Данные сотрудника" HorizontalAlignment="Center" Height="34" VerticalAlignment="Top" Width="324" FontFamily="Verdana" FontSize="20"/>
+            <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,120.75,0,0" Width="344" Height="99">
+                <Label Content="Заказ" HorizontalAlignment="Center" Height="30" VerticalAlignment="Top" Width="324" FontFamily="Verdana" FontSize="20"/>
+                <Border HorizontalAlignment="Center" Height="56" VerticalAlignment="Bottom" Width="324" BorderBrush="#FFCDCDCD" BorderThickness="1,1,1,1" CornerRadius="8,8,8,8">
+                    <Grid>
+                        <Grid HorizontalAlignment="Left" Height="36" Margin="20,10,0,0" VerticalAlignment="Top" Width="284">
+                            <TextBlock HorizontalAlignment="Left" Height="16" TextWrapping="Wrap" Text="Номер" VerticalAlignment="Center" Width="77" FontFamily="Verdana"/>
+                            <TextBox HorizontalAlignment="Right" Height="14" TextWrapping="Wrap" VerticalAlignment="Center" Width="53" FontFamily="Verdana" Foreground="#FFF2A65B" TextAlignment="Right" Text="1" BorderBrush="{x:Null}"/>
+                        </Grid>
+                    </Grid>
+                </Border>
+            </Grid>
+            <Grid HorizontalAlignment="Left" Height="379" Margin="20,239.75,0,0" VerticalAlignment="Top" Width="344">
+                <Label Content="Получатель" HorizontalAlignment="Center" Height="34" VerticalAlignment="Top" Width="324" FontFamily="Verdana" FontSize="20"/>
                 <Border HorizontalAlignment="Center" Height="56" VerticalAlignment="Top" Width="324" BorderBrush="#FFCDCDCD" BorderThickness="1,1,1,1" CornerRadius="8,8,8,8" Margin="0,43,0,0">
                     <Grid>
                         <Grid HorizontalAlignment="Left" Height="36" Margin="20,10,0,0" VerticalAlignment="Top" Width="284">
@@ -239,6 +221,26 @@
                     </Grid>
                 </Border>
             </Grid>
+            <Border HorizontalAlignment="Center" Height="63" VerticalAlignment="Bottom" Width="324" Margin="0,0,0,60" CornerRadius="8,8,8,8" Background="#FF55D0A9" >
+                <Button Content="Доставил заказ" FontFamily="Verdana" FontSize="20" BorderThickness="0,0,0,0" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="White"/>
+            </Border>
+            <Border HorizontalAlignment="Center" Height="63" VerticalAlignment="Bottom" Width="324" Margin="0,0,0,143" CornerRadius="8,8,8,8" >
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <LinearGradientBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                                <RotateTransform Angle="-90" CenterX="0.5" CenterY="0.5"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </LinearGradientBrush.RelativeTransform>
+                        <GradientStop Color="#FFF2A65B"/>
+                        <GradientStop Color="#FFEE7A6E" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Button Content="Посмотреть товары" FontFamily="Verdana" FontSize="20" BorderThickness="0,0,0,0" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="White"/>
+            </Border>
         </Grid>
 
     </Grid>
