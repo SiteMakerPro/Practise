@@ -168,6 +168,13 @@ namespace WpfApp1
             App.CurrentApp.createCard(Goods, catalog);
         }
 
+        public void basketButton_PreviewMouseLeftButtonDown(object sender, MouseEventArgs e)
+        {
+            var item = sender as Border;
+            string itemName = item.Name;
+            //App.CurrentApp.addGoodToBasket(itemName, basket);
+        }
+
         // Оверлей страницы Логин
 
         // <Frame x:Name="overlayLogin" HorizontalAlignment="Center" Height="1024" VerticalAlignment="Top" Width="1440" Background="#4C000000" Source="/Page2.xaml" Visibility="Collapsed"/>
