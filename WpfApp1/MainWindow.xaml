@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="ТренболонShop" Height="1024" Width="1440" Icon="/Images/logo.png" Activated="Window_Activated">
+        Title="ТренболонShop" Height="1024" Width="1440" Icon="/Images/logo.png" Activated="Window_Activated" DataContextChanged="Window_DataContextChanged">
     <Window.Resources>
     </Window.Resources>
     <Grid Width="1440" Height="1024" Background="#FFEEEEEE">
@@ -107,33 +107,9 @@
                     <RowDefinition Height="10"></RowDefinition>
                     <RowDefinition Height="110"></RowDefinition>
                 </Grid.RowDefinitions>
-                <Border Grid.Row="2" HorizontalAlignment="Center" Height="110" VerticalAlignment="Top" Width="324" BorderBrush="#FFCDCDCD" BorderThickness="1,1,1,1" CornerRadius="8,8,8,8">
-                    <Grid>
-                        <Image HorizontalAlignment="Left" Height="90" VerticalAlignment="Top" Width="90" Margin="20,10,0,0" Source="/image 4.jpg"/>
-                        <Grid HorizontalAlignment="Left" Height="90" Margin="120,10,0,0" VerticalAlignment="Top" Width="186">
-                            <TextBlock HorizontalAlignment="Left" Height="42" TextWrapping="Wrap" Typography.Capitals="AllSmallCaps" Text="Гантель гексагональная обрезиненная 12,5 кг" VerticalAlignment="Top" Width="186" Margin="0,10,0,0" FontFamily="Verdana"/>
-                            <TextBlock HorizontalAlignment="Right" Height="14" TextWrapping="Wrap" Typography.Capitals="AllSmallCaps" VerticalAlignment="Bottom" Width="53" Margin="0,0,0,10" FontFamily="Verdana" Foreground="#FFF2A65B" TextAlignment="Right"><Run Text="1299"/><Run Language="ru-ru" Text="р."/></TextBlock>
-                        </Grid>
-                    </Grid>
-                </Border>
-                <Border Grid.Row="4" HorizontalAlignment="Center" Height="110" VerticalAlignment="Top" Width="324" BorderBrush="#FFCDCDCD" BorderThickness="1,1,1,1" CornerRadius="8,8,8,8">
-                    <Grid>
-                        <Image HorizontalAlignment="Left" Height="90" VerticalAlignment="Top" Width="90" Margin="20,10,0,0" Source="/image 4.jpg"/>
-                        <Grid HorizontalAlignment="Left" Height="90" Margin="120,10,0,0" VerticalAlignment="Top" Width="186">
-                            <TextBlock HorizontalAlignment="Left" Height="42" TextWrapping="Wrap" Typography.Capitals="AllSmallCaps" Text="Гантель гексагональная обрезиненная 12,5 кг" VerticalAlignment="Top" Width="186" Margin="0,10,0,0" FontFamily="Verdana"/>
-                            <TextBlock HorizontalAlignment="Right" Height="14" TextWrapping="Wrap" Typography.Capitals="AllSmallCaps" VerticalAlignment="Bottom" Width="53" Margin="0,0,0,10" FontFamily="Verdana" Foreground="#FFF2A65B" TextAlignment="Right"><Run Text="1299"/><Run Language="ru-ru" Text="р."/></TextBlock>
-                        </Grid>
-                    </Grid>
-                </Border>
-                <Border Grid.Row="" HorizontalAlignment="Center" Height="110" VerticalAlignment="Top" Width="324" BorderBrush="#FFCDCDCD" BorderThickness="1,1,1,1" CornerRadius="8,8,8,8">
-                    <Grid>
-                        <Image HorizontalAlignment="Left" Height="90" VerticalAlignment="Top" Width="90" Margin="20,10,0,0" Source="/image 4.jpg"/>
-                        <Grid HorizontalAlignment="Left" Height="90" Margin="120,10,0,0" VerticalAlignment="Top" Width="186">
-                            <TextBlock HorizontalAlignment="Left" Height="42" TextWrapping="Wrap" Typography.Capitals="AllSmallCaps" Text="Гантель гексагональная обрезиненная 12,5 кг" VerticalAlignment="Top" Width="186" Margin="0,10,0,0" FontFamily="Verdana"/>
-                            <TextBlock HorizontalAlignment="Right" Height="14" TextWrapping="Wrap" Typography.Capitals="AllSmallCaps" VerticalAlignment="Bottom" Width="53" Margin="0,0,0,10" FontFamily="Verdana" Foreground="#FFF2A65B" TextAlignment="Right"><Run Text="1299"/><Run Language="ru-ru" Text="р."/></TextBlock>
-                        </Grid>
-                    </Grid>
-                </Border>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
             </Grid>
             <Border HorizontalAlignment="Center" Height="156" Margin="0,602,0,0" VerticalAlignment="Top" Width="324" Background="#FFEFEFEF" CornerRadius="8,8,8,8">
                 <Grid>

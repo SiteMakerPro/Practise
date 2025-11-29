@@ -11,6 +11,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using static WpfApp1.App;
 using static WpfApp1.MainWindow;
 
 namespace WpfApp1
@@ -85,11 +86,6 @@ namespace WpfApp1
         public static App CurrentApp => (App)Current;
         public ObservableCollection<Card> DataCard { get; set; }
         public ObservableCollection<Basket> BasketCells { get; set; }
-
-        public App()
-        {
-            BasketCells = new ObservableCollection<App.Basket> { };
-        }
 
         public void createCard(ObservableCollection<Card> Cards, Grid block)
         {
@@ -218,13 +214,55 @@ namespace WpfApp1
                 }
             }
         }
+        //public void basketUpdate(Grid block)
+        //{
+        //    block.Children.Clear();
+
+        //    for (int i = 0; i < BasketCells.Count; i++)
+        //    {
+        //        Border basketBorder = new Border();
+        //        basketBorder.HorizontalAlignment = HorizontalAlignment.Center;
+        //        basketBorder.VerticalAlignment = VerticalAlignment.Top;
+        //        basketBorder.Width = 324;
+        //        basketBorder.Height = 110;
+        //        basketBorder.BorderBrush = new SolidColorBrush(Color.FromRgb(205, 205, 205));
+        //        basketBorder.BorderThickness = new Thickness(1);
+        //        basketBorder.Background = new SolidColorBrush(Colors.White);
+        //        basketBorder.CornerRadius = new CornerRadius(8);
+        //        Grid.SetRow(basketBorder, 0);
+        //        Grid.SetColumn(basketBorder, 0);
+
+        //        Grid basketGrid = new Grid();
+        //        basketBorder.Child = basketGrid;
+
+        //        block.Children.Add(basketBorder);
+        //    }
+        //}
         public void addGoodToBasket(string itemName, Grid block)
         {
-            foreach (Card card in DataCard)
+            BasketCells = new ObservableCollection<Basket> { };
+            for (int i = 0; i < DataCard.Count; i++)
             {
-                if (card.Name == itemName)
+                if (BasketCells.Count == 0)
                 {
-                    BasketCells.Add(new Basket(card.Id, card.Title, card.Name, card.Price, "pack://application:,,,/Images/good.jpg"));
+                    BasketCells.Add(new Basket(DataCard[i].Id, DataCard[i].Title, DataCard[i].Category, DataCard[i].Price, "pack://application:,,,/Images/good.jpg"));
+                    break;
+                }
+                else
+                {
+                    foreach(Basket basket in BasketCells)
+                    {
+                        if (basket.Name == itemName)
+                        {
+                            break;
+                        }
+                        else if (itemName == DataCard[i].Name)
+                        {
+                            BasketCells.Add(new Basket(DataCard[i].Id, DataCard[i].Title, DataCard[i].Category, DataCard[i].Price, "pack://application:,,,/Images/good.jpg"));
+                            break;
+                        }
+                    }
+                        
                 }
             }
             block.Children.Clear();
@@ -235,12 +273,18 @@ namespace WpfApp1
                 basketBorder.HorizontalAlignment = HorizontalAlignment.Center;
                 basketBorder.VerticalAlignment = VerticalAlignment.Top;
                 basketBorder.Width = 324;
+                basketBorder.Height = 110;
                 basketBorder.BorderBrush = new SolidColorBrush(Color.FromRgb(205, 205, 205));
                 basketBorder.BorderThickness = new Thickness(1);
+                basketBorder.Background = new SolidColorBrush(Colors.White);
                 basketBorder.CornerRadius = new CornerRadius(8);
-                Grid.SetRow(basketBorder, i * 2);
-                block.Children.Add(basketBorder);
+                Grid.SetRow(basketBorder, 0);
+                Grid.SetColumn(basketBorder, 0);
 
+                Grid basketGrid = new Grid();
+                basketBorder.Child = basketGrid;
+
+                block.Children.Add(basketBorder);
             }
         }
 

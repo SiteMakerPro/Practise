@@ -30,6 +30,8 @@ namespace WpfApp1
         {
             InitializeComponent();
 
+            
+
             Goods = new ObservableCollection<App.Card>
             {
                 new App.Card(1, "Гантель гексагональная обрезиненная 12,5 кг", "Инвентарь", "pack://application:,,,/Images/good.jpg", 1299 ),
@@ -172,7 +174,12 @@ namespace WpfApp1
         {
             var item = sender as Border;
             string itemName = item.Name;
-            //App.CurrentApp.addGoodToBasket(itemName, basket);
+            App.CurrentApp.addGoodToBasket(itemName, basket);
+        }
+
+        private void Window_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            //App.CurrentApp.basketUpdate(basket);
         }
 
         // Оверлей страницы Логин
