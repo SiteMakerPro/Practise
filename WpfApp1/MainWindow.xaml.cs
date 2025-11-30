@@ -40,6 +40,8 @@ namespace WpfApp1
                 new App.Card(4, "Гантель гексагональная обрезиненная 100 кг", "Инвентарь", "pack://application:,,,/Images/good.jpg", 1299 ),
                 new App.Card(5, "Гантель гексагональная обрезиненная 100 кг", "Одежда", "pack://application:,,,/Images/clothes.jpg", 999 )
             };
+
+            basket.DataContext = App.CurrentApp.BasketCells;
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {

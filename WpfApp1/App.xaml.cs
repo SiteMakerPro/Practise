@@ -240,9 +240,11 @@ namespace WpfApp1
         //}
         public void addGoodToBasket(string itemName, Grid block)
         {
+            MainWindow mainWindow = new MainWindow();
             BasketCells = new ObservableCollection<Basket> { };
             for (int i = 0; i < DataCard.Count; i++)
             {
+                
                 if (BasketCells.Count == 0)
                 {
                     BasketCells.Add(new Basket(DataCard[i].Id, DataCard[i].Title, DataCard[i].Category, DataCard[i].Price, "pack://application:,,,/Images/good.jpg"));
@@ -270,12 +272,12 @@ namespace WpfApp1
             for (int i = 0; i < BasketCells.Count; i++)
             {
                 Border basketBorder = new Border();
-                basketBorder.HorizontalAlignment = HorizontalAlignment.Center;
+                basketBorder.HorizontalAlignment = HorizontalAlignment.Left;
                 basketBorder.VerticalAlignment = VerticalAlignment.Top;
                 basketBorder.Width = 324;
                 basketBorder.Height = 110;
-                basketBorder.BorderBrush = new SolidColorBrush(Color.FromRgb(205, 205, 205));
                 basketBorder.BorderThickness = new Thickness(1);
+                basketBorder.BorderBrush = new SolidColorBrush(Color.FromRgb(205, 205, 205));
                 basketBorder.Background = new SolidColorBrush(Colors.White);
                 basketBorder.CornerRadius = new CornerRadius(8);
                 Grid.SetRow(basketBorder, 0);
