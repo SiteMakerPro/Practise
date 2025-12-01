@@ -16,7 +16,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp1.Models;
 using WpfApp1.Properties;
+using WpfApp1.ViewModel;
 
 namespace WpfApp1
 {
@@ -25,46 +27,51 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
-        public ObservableCollection<App.Card> Goods { get; set; }
+        public ObservableCollection<Card> Cards { get; set; }
+        public ObservableCollection<Card> DataCard { get; set; }
+
+        public string category = "Инвентарь";
         public MainWindow()
         {
             InitializeComponent();
-
-            
-
-            Goods = new ObservableCollection<App.Card>
+            Cards = new ObservableCollection<Card>
             {
-                new App.Card(1, "Гантель гексагональная обрезиненная 12,5 кг", "Инвентарь", "pack://application:,,,/Images/good.jpg", 1299 ),
-                new App.Card(2, "Гантель гексагональная обрезиненная 25 кг", "Инвентарь", "pack://application:,,,/Images/good.jpg", 1299 ),
-                new App.Card(3, "Гантель гексагональная обрезиненная 50 кг", "Инвентарь", "pack://application:,,,/Images/good.jpg", 1299 ),
-                new App.Card(4, "Гантель гексагональная обрезиненная 100 кг", "Инвентарь", "pack://application:,,,/Images/good.jpg", 1299 ),
-                new App.Card(5, "Гантель гексагональная обрезиненная 100 кг", "Одежда", "pack://application:,,,/Images/clothes.jpg", 999 )
+                new Card(1, "Гантель гексагональная обрезиненная 12,5 кг", "Инвентарь", "pack://application:,,,/Images/good.jpg", 1299 ),
+                new Card(2, "Гантель гексагональная обрезиненная 25 кг", "Инвентарь", "pack://application:,,,/Images/good.jpg", 1299 ),
+                new Card(3, "Гантель гексагональная обрезиненная 50 кг", "Инвентарь", "pack://application:,,,/Images/good.jpg", 1299 ),
+                new Card(4, "Гантель гексагональная обрезиненная 100 кг", "Инвентарь", "pack://application:,,,/Images/good.jpg", 1299 ),
+                new Card(5, "Гантель гексагональная обрезиненная 100 кг", "Одежда", "pack://application:,,,/Images/clothes.jpg", 999 )
             };
 
-            basket.DataContext = App.CurrentApp.BasketCells;
+            DataCard = new ObservableCollection<Card> { };
+            foreach (Card card in Cards)
+            {
+                DataCard.Add(card);
+            }
+            DataContext = this;
+            //basket.DataContext = App.CurrentApp.BasketCells;
+        }
+        public void createCategory(ObservableCollection<Card> Cards)
+        {
+            DataCard.Clear();
+
+            foreach (Card card in Cards)
+            {
+                if (category == "Все товары")
+                {
+                    DataCard.Add(card);
+                }
+                else if (card.Category == category)
+                {
+                    DataCard.Add(card);
+                }
+            }
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             LogIn login = new LogIn();
             login.Show();
             this.Close();
-        }
-
-        private void Window_Activated(object sender, EventArgs e)
-        {
-            App.CurrentApp.category = "Все товары";
-            App.CurrentApp.createCard(Goods, catalog);
-            foreach (var elem in menu.Children.OfType<Border>())
-            {
-                if (elem.Name != "allGoods")
-                {
-                    //elem.Background = new SolidColorBrush(Colors.White);
-                    elem.Style = (Style)Application.Current.FindResource("BorderStyle1");
-                }
-            }
-            allGoods.Style = (Style)Application.Current.FindResource("BtnActivated");
-            App.CurrentApp.category = "Инвентарь";
-            App.CurrentApp.createCard(Goods, catalog);
         }
 
         private void Border_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -78,8 +85,8 @@ namespace WpfApp1
                 }
             }
             invent.Style = (Style)Application.Current.FindResource("BtnActivated");
-            App.CurrentApp.category = "Инвентарь";
-            App.CurrentApp.createCard(Goods, catalog);
+            category = "Инвентарь";
+            createCategory(Cards);
         }
 
         private void allGoods_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -93,8 +100,8 @@ namespace WpfApp1
                 }
             }
             allGoods.Style = (Style)Application.Current.FindResource("BtnActivated");
-            App.CurrentApp.category = "Все товары";
-            App.CurrentApp.createCard(Goods, catalog);
+            category = "Все товары";
+            createCategory(Cards);
         }
 
         private void clothes_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -108,8 +115,8 @@ namespace WpfApp1
                 }
             }
             clothes.Style = (Style)Application.Current.FindResource("BtnActivated");
-            App.CurrentApp.category = "Одежда";
-            App.CurrentApp.createCard(Goods, catalog);
+            category = "Одежда";
+            createCategory(Cards);
         }
 
         private void shoes_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -123,8 +130,8 @@ namespace WpfApp1
                 }
             }
             shoes.Style = (Style)Application.Current.FindResource("BtnActivated");
-            App.CurrentApp.category = "Обувь";
-            App.CurrentApp.createCard(Goods, catalog);
+            category = "Обувь";
+            createCategory(Cards);
         }
 
         private void food_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -138,8 +145,8 @@ namespace WpfApp1
                 }
             }
             food.Style = (Style)Application.Current.FindResource("BtnActivated");
-            App.CurrentApp.category = "Питание";
-            App.CurrentApp.createCard(Goods, catalog);
+            category = "Питание";
+            createCategory(Cards);
         }
 
         private void trainer_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -153,8 +160,8 @@ namespace WpfApp1
                 }
             }
             trainer.Style = (Style)Application.Current.FindResource("BtnActivated");
-            App.CurrentApp.category = "Тренажёры";
-            App.CurrentApp.createCard(Goods, catalog);
+            category = "Тренажёры";
+            createCategory(Cards);
         }
 
         private void games_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -168,21 +175,32 @@ namespace WpfApp1
                 }
             }
             games.Style = (Style)Application.Current.FindResource("BtnActivated");
-            App.CurrentApp.category = "Игры";
-            App.CurrentApp.createCard(Goods, catalog);
+            category = "Игры";
+            createCategory(Cards);
+        }
+        private void Border_PreviewMouseLeftButtonDown_1(object sender, MouseButtonEventArgs e)
+        {
+            LogIn login = new LogIn();
+            login.Show();
+            this.Close();
         }
 
-        public void basketButton_PreviewMouseLeftButtonDown(object sender, MouseEventArgs e)
+        private void Window_Activated(object sender, EventArgs e)
         {
-            var item = sender as Border;
-            string itemName = item.Name;
-            App.CurrentApp.addGoodToBasket(itemName, basket);
+            foreach (var elem in menu.Children.OfType<Border>())
+            {
+                if (elem.Name != "allGoods")
+                {
+                    //elem.Background = new SolidColorBrush(Colors.White);
+                    elem.Style = (Style)Application.Current.FindResource("BorderStyle1");
+                }
+            }
+            allGoods.Style = (Style)Application.Current.FindResource("BtnActivated");
+            category = "Все товары";
+            createCategory(Cards);
         }
 
-        private void Window_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
-        {
-            //App.CurrentApp.basketUpdate(basket);
-        }
+
 
         // Оверлей страницы Логин
 
