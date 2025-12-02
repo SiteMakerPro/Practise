@@ -157,7 +157,7 @@
                                 <GradientStop Color="#FFEE6E6E" Offset="1"/>
                             </LinearGradientBrush>
                         </Border.Background>
-                        <Button Content="Очистить" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" FontFamily="Verdana" FontSize="18"/>
+                        <Button Content="Очистить" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" FontFamily="Verdana" FontSize="18" Click="Button_Click_1"/>
                     </Border>
                 </Grid>
             </Border>
@@ -204,13 +204,13 @@
                     <Border HorizontalAlignment="Center" Height="68" Margin="0,20,0,0" VerticalAlignment="Top" Width="294" Padding="0,0,0,20" BorderThickness="0,0,0,2" BorderBrush="#FFCDCDCD">
                         <Grid>
                             <TextBlock HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" Text="Промежуточная стоимость" VerticalAlignment="Top" Width="188" FontFamily="Verdana" FontWeight="SemiBold" Foreground="#FF939393"/>
-                            <TextBlock x:Name="half_price" HorizontalAlignment="Right" Height="19" TextWrapping="Wrap" Text="5196р." VerticalAlignment="Top" Width="59" FontFamily="Verdana" FontWeight="SemiBold" Foreground="#FF939393" TextAlignment="Right"/>
+                            <TextBlock x:Name="half_price" HorizontalAlignment="Right" Height="19" TextWrapping="Wrap" Text="0р." VerticalAlignment="Top" Width="59" FontFamily="Verdana" FontWeight="SemiBold" Foreground="#FF939393" TextAlignment="Right"/>
                             <TextBlock HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" Text="Налог 20%" VerticalAlignment="Top" Width="82" Margin="0,29,0,0" FontFamily="Verdana" FontWeight="SemiBold" Foreground="#FF939393"/>
-                            <TextBlock x:Name="tax" HorizontalAlignment="Right" Height="19" TextWrapping="Wrap" Text="1039р." VerticalAlignment="Top" Width="59" Margin="0,29,0,0" FontFamily="Verdana" FontWeight="SemiBold" Foreground="#FF939393" TextAlignment="Right"/>
+                            <TextBlock x:Name="tax" HorizontalAlignment="Right" Height="19" TextWrapping="Wrap" Text="0р." VerticalAlignment="Top" Width="59" Margin="0,29,0,0" FontFamily="Verdana" FontWeight="SemiBold" Foreground="#FF939393" TextAlignment="Right"/>
                         </Grid>
                     </Border>
                     <TextBlock HorizontalAlignment="Left" Height="28" Margin="20,0,0,20" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="70" FontFamily="Verdana" FontSize="20" FontWeight="SemiBold"><Run Language="ru-ru" Text="Итого"/></TextBlock>
-                    <TextBlock x:Name="total_price" HorizontalAlignment="Right" Height="28" Margin="0,0,20,20" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="96" FontFamily="Verdana" FontSize="20" FontWeight="SemiBold" Text="6235р." TextAlignment="Right"/>
+                    <TextBlock x:Name="total_price" HorizontalAlignment="Right" Height="28" Margin="0,0,20,20" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="96" FontFamily="Verdana" FontSize="20" FontWeight="SemiBold" Text="0р." TextAlignment="Right"/>
                 </Grid>
             </Border>
             <Grid HorizontalAlignment="Center" Height="95" Margin="0,782,0,0" VerticalAlignment="Top" Width="250">

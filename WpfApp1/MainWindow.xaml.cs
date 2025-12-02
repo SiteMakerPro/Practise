@@ -49,7 +49,6 @@ namespace WpfApp1
                 DataCard.Add(card);
             }
             DataContext = this;
-            //basket.DataContext = App.CurrentApp.BasketCells;
         }
         public void createCategory(ObservableCollection<Card> Cards)
         {
@@ -198,6 +197,13 @@ namespace WpfApp1
             allGoods.Style = (Style)Application.Current.FindResource("BtnActivated");
             category = "Все товары";
             createCategory(Cards);
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            LogIn login = new LogIn();
+            login.Show();
+            this.Close();
         }
 
 

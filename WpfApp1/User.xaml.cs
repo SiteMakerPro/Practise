@@ -236,9 +236,17 @@ namespace WpfApp1
 
         private void Window_Activated(object sender, EventArgs e)
         {
-            half_price.Text = $"{halfPrice}р.";
-            tax.Text = $"{taxPrice}р.";
-            total_price.Text = $"{totalPrice}р.";
+            foreach (var elem in menu.Children.OfType<Border>())
+            {
+                if (elem.Name != "allGoods")
+                {
+                    //elem.Background = new SolidColorBrush(Colors.White);
+                    elem.Style = (Style)Application.Current.FindResource("BorderStyle1");
+                }
+            }
+            allGoods.Style = (Style)Application.Current.FindResource("BtnActivated");
+            category = "Все товары";
+            createCategory(mainWindow.Cards);
         }
 
         private void Border_PreviewMouseLeftButtonDown_1(object sender, MouseButtonEventArgs e)

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="User" Height="1024" Width="1440">
+        Title="User" Height="1024" Width="1440" Activated="Window_Activated" Cursor="None" Icon="/Images/logo.png">
     <Grid Height="1024" Width="1440" Background="#FFEEEEEE">
         <Grid HorizontalAlignment="Left" Height="1024" VerticalAlignment="Center" Width="267" Background="White">
             <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,20,20,0" Width="227" Height="81.49">
@@ -116,7 +116,7 @@
                             <Grid>
                                 <Image HorizontalAlignment = "Center" Height="200" VerticalAlignment="Top" Margin="0, 20, 0, 0" Width="260" Source="{Binding BigImagePath}" Stretch="Fill"/>
                                 <TextBlock HorizontalAlignment = "Left" Height="38" Margin="20,240,0,0" TextWrapping="Wrap" Text="{Binding Title}" VerticalAlignment="Top" Width="260" FontFamily="Verdana" FontSize="16"/>
-                                <TextBlock HorizontalAlignment = "Left" Height="21" Margin="20,298,0,0" TextWrapping="Wrap" Text="{Binding Price}" VerticalAlignment="Top" Width="51" FontFamily="Verdana" FontSize="16"/>
+                                <TextBlock HorizontalAlignment = "Left" Height="21" Margin="20,298,0,0" TextWrapping="Wrap" Text="{Binding Price, StringFormat={}{0}р.}" VerticalAlignment="Top" Width="51" FontFamily="Verdana" FontSize="16"/>
                                 <Border Tag="{Binding Id}" HorizontalAlignment = "Left" Height="41" Margin="20,339,0,0" VerticalAlignment="Top" Width="260" CornerRadius="8,8,8,8" PreviewMouseLeftButtonDown="basketButton_PreviewMouseLeftButtonDown" >
                                     <Border.Background>
                                         <LinearGradientBrush EndPoint = "0.5,1" StartPoint="0.5,0">
@@ -191,7 +191,7 @@
                     <DataTemplate>
                         <Border HorizontalAlignment = "Center" Height="110" VerticalAlignment="Top" Width="324" BorderBrush="#FFCDCDCD" BorderThickness="1" CornerRadius="8">
                             <Grid>
-                                <Image HorizontalAlignment = "Left" Height="90" VerticalAlignment="Top" Width="90" Margin="20,10,0,0" Source="/image 4.jpg"/>
+                                <Image HorizontalAlignment = "Left" Height="90" VerticalAlignment="Top" Width="90" Margin="20,10,0,0" Source="{Binding SmallImagePath}"/>
                                 <Grid HorizontalAlignment = "Left" Height="90" Margin="120,10,0,0" VerticalAlignment="Top" Width="186">
                                     <TextBlock HorizontalAlignment = "Left" Height="42" TextWrapping="Wrap" Typography.Capitals="AllSmallCaps" Text="{Binding Title}" VerticalAlignment="Top" Width="186" Margin="0,10,0,0" FontFamily="Verdana"/>
                                     <TextBlock HorizontalAlignment = "Right" Height="14" TextWrapping="Wrap" Typography.Capitals="AllSmallCaps" VerticalAlignment="Bottom" Width="53" Margin="0,0,0,10" FontFamily="Verdana" Foreground="#FFF2A65B" TextAlignment="Right"><Run Text = "1299" /><Run Language="ru-ru" Text="р."/></TextBlock>
@@ -206,13 +206,13 @@
                     <Border HorizontalAlignment="Center" Height="68" Margin="0,20,0,0" VerticalAlignment="Top" Width="294" Padding="0,0,0,20" BorderThickness="0,0,0,2" BorderBrush="#FFCDCDCD">
                         <Grid>
                             <TextBlock HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" Text="Промежуточная стоимость" VerticalAlignment="Top" Width="188" FontFamily="Verdana" FontWeight="SemiBold" Foreground="#FF939393"/>
-                            <TextBlock x:Name="half_price" HorizontalAlignment="Right" Height="19" TextWrapping="Wrap" Text="5196р." VerticalAlignment="Top" Width="59" FontFamily="Verdana" FontWeight="SemiBold" Foreground="#FF939393" TextAlignment="Right"/>
+                            <TextBlock x:Name="half_price" HorizontalAlignment="Right" Height="19" TextWrapping="Wrap" Text="0р." VerticalAlignment="Top" Width="59" FontFamily="Verdana" FontWeight="SemiBold" Foreground="#FF939393" TextAlignment="Right"/>
                             <TextBlock HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" Text="Налог 20%" VerticalAlignment="Top" Width="82" Margin="0,29,0,0" FontFamily="Verdana" FontWeight="SemiBold" Foreground="#FF939393"/>
-                            <TextBlock x:Name="tax" HorizontalAlignment="Right" Height="19" TextWrapping="Wrap" Text="1039р." VerticalAlignment="Top" Width="59" Margin="0,29,0,0" FontFamily="Verdana" FontWeight="SemiBold" Foreground="#FF939393" TextAlignment="Right"/>
+                            <TextBlock x:Name="tax" HorizontalAlignment="Right" Height="19" TextWrapping="Wrap" Text="0р." VerticalAlignment="Top" Width="59" Margin="0,29,0,0" FontFamily="Verdana" FontWeight="SemiBold" Foreground="#FF939393" TextAlignment="Right"/>
                         </Grid>
                     </Border>
                     <TextBlock HorizontalAlignment="Left" Height="28" Margin="20,0,0,20" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="70" FontFamily="Verdana" FontSize="20" FontWeight="SemiBold"><Run Language="ru-ru" Text="Итого"/></TextBlock>
-                    <TextBlock x:Name="total_price" HorizontalAlignment="Right" Height="28" Margin="0,0,20,20" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="150" FontFamily="Verdana" FontSize="20" FontWeight="SemiBold" Text="6235р." TextAlignment="Right"/>
+                    <TextBlock x:Name="total_price" HorizontalAlignment="Right" Height="28" Margin="0,0,20,20" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="150" FontFamily="Verdana" FontSize="20" FontWeight="SemiBold" Text="0р." TextAlignment="Right"/>
                 </Grid>
             </Border>
             <Grid HorizontalAlignment="Center" Height="95" Margin="0,782,0,0" VerticalAlignment="Top" Width="250">

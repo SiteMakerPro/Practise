@@ -13,17 +13,17 @@ namespace WpfApp1.Models
         public string Title { get; set; }
         public string Category { get; set; }
         public decimal Price { get; set; }
-        public string BigImagePath { get; set; }
+        public string SmallImagePath { get; set; }
         public int Row { get; set; }
 
-        public BasketCell(int id, int order, string title, string category, string bigImagePath, decimal price = 0)
+        public BasketCell(int id, int order, string title, string category, string smallImagePath, decimal price = 0)
         {
             Id = id;
             Order = order;
             Title = title;
             Category = category;
             Price = price;
-            BigImagePath = bigImagePath;
+            SmallImagePath = smallImagePath;
             switch (order)
             {
                 case 1:
