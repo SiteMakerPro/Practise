@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="PVZ" Height="1024" Width="1440">
-    <Grid Width="1440" Height="1024">
+    <Grid Width="1440" Height="1024" Background="#FFEEEEEE">
         <Grid HorizontalAlignment="Left" Height="1024" VerticalAlignment="Center" Width="267" Background="White">
             <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,20,20,0" Width="227" Height="81.49">
                 <Grid HorizontalAlignment="Left" Height="60" VerticalAlignment="Center" Width="60" RenderTransformOrigin="0.5,0.5">
@@ -24,12 +24,6 @@
             </Grid>
             <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20, 141.49, 20, 0" Width="227">
                 <Border Style="{DynamicResource BorderStyle1}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="227" Height="66" CornerRadius="30,30,30,30" >
-                    <Grid Background="{x:Null}" >
-                        <Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="/Order Completed.png" Width="36" Height="36" Margin="20, 0, 0, 0" />
-                        <TextBlock  HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20" Text="Заказы"/>
-                    </Grid>
-                </Border>
-                <Border HorizontalAlignment="Center" VerticalAlignment="Top" Width="227" Height="66" Margin="0,76,0,0" CornerRadius="30,30,30,30">
                     <Border.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <LinearGradientBrush.RelativeTransform>
@@ -44,6 +38,12 @@
                             <GradientStop Color="#FFFABAB3" Offset="1"/>
                         </LinearGradientBrush>
                     </Border.Background>
+                    <Grid Background="{x:Null}" >
+                        <Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="/Order Completed.png" Width="36" Height="36" Margin="20, 0, 0, 0" />
+                        <TextBlock  HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20" Text="Заказы"/>
+                    </Grid>
+                </Border>
+                <Border HorizontalAlignment="Center" VerticalAlignment="Top" Width="227" Height="66" Margin="0,76,0,0" CornerRadius="30,30,30,30">
                     <Grid>
                         <Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="/Big Parcel.png" Width="36" Height="36" Margin="20, 0, 0, 0" />
                         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20" Foreground="Black" Text="Товары"/>

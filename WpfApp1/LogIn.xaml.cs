@@ -40,12 +40,24 @@ namespace WpfApp1
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            if (loginInput.Text.Length > 0 && passwordInput.Text.Length > 0)
+            if (loginInput.Text.Length > 0 && passwordInput.Password.Length > 0)
             {
-                if (loginInput.Text == "user" && passwordInput.Text == "12345")
+                if (loginInput.Text == "user" && passwordInput.Password == "12345")
                 {
                     User user = new User();
                     user.Show();
+                    this.Close();
+                }
+                else if (loginInput.Text == "admin" && passwordInput.Password == "12345")
+                {
+                    Admin admin = new Admin();
+                    admin.Show();
+                    this.Close();
+                }
+                else if (loginInput.Text == "pvz" && passwordInput.Password == "12345")
+                {
+                    PVZ pvz = new PVZ();
+                    pvz.Show();
                     this.Close();
                 }
             }
@@ -57,17 +69,17 @@ namespace WpfApp1
             {
                 loginInput.Text = "";
             }
-            if (passwordInput.Text == "")
+            if (passwordInput.Password == "")
             {
-                passwordInput.Text = "Пароль";
+                passwordInput.Password = "Пароль";
             }
         }
 
         private void passwordInput_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            if (passwordInput.Text == "Пароль")
+            if (passwordInput.Password == "Пароль")
             {
-                passwordInput.Text = "";
+                passwordInput.Password = "";
             }
             if (loginInput.Text == "")
             {
