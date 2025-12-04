@@ -251,8 +251,8 @@ namespace WpfApp1
 
         private void Border_PreviewMouseLeftButtonDown_1(object sender, MouseButtonEventArgs e)
         {
-            LogIn login = new LogIn();
-            login.Show();
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
             this.Close();
         }
     }

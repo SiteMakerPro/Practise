@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="User" Height="1024" Width="1440" Activated="Window_Activated" Cursor="None" Icon="/Images/logo.png">
+        Title="User" Height="1024" Width="1440" Activated="Window_Activated" Icon="/Images/logo.png">
     <Grid Height="1024" Width="1440" Background="#FFEEEEEE">
         <Grid HorizontalAlignment="Left" Height="1024" VerticalAlignment="Center" Width="267" Background="White">
             <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,20,20,0" Width="227" Height="81.49">
@@ -67,23 +67,21 @@
                 </Border>
             </Grid>
             <Grid HorizontalAlignment = "Center" Height="92" Margin="0,872,0,0" VerticalAlignment="Top">
-                <Grid HorizontalAlignment = "Left" VerticalAlignment="Top" Width="227" Height="36">
-                    <Image HorizontalAlignment = "Left" VerticalAlignment="Center" Width="36" Height="36" Source="/Profile.png" Margin="20, 0, 0, 0"/>
-                    <TextBlock HorizontalAlignment = "Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20" Text="Профиль"/>
-                </Grid>
-                <Grid HorizontalAlignment = "Left" VerticalAlignment="Bottom" Width="227" Height="36">
-                    <Image HorizontalAlignment = "Left" VerticalAlignment="Center" Width="36" Height="36" Source="/Logout.png" Margin="20, 0, 0, 0"/>
-                    <TextBlock HorizontalAlignment = "Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20" Text="Выйти"/>
-                </Grid>
+                <Border Style="{DynamicResource BorderStyle1}" HorizontalAlignment = "Left" VerticalAlignment="Top" Width="227" Height="46" CornerRadius="20" PreviewMouseLeftButtonDown="Border_PreviewMouseLeftButtonDown_1">
+                    <Grid  Width="227" Height="36">
+                        <Image HorizontalAlignment = "Left" VerticalAlignment="Center" Width="36" Height="36" Source="/Profile.png" Margin="20, 0, 0, 0"/>
+                        <TextBlock HorizontalAlignment = "Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20" Text="Профиль"/>
+                    </Grid>
+                </Border>
+                <Border Style="{DynamicResource BorderStyle1}" HorizontalAlignment = "Left" VerticalAlignment="Bottom" Width="227" Height="46" CornerRadius="20" PreviewMouseLeftButtonDown="Border_PreviewMouseLeftButtonDown_1">
+                    <Grid Width="227" Height="36">
+                        <Image HorizontalAlignment = "Left" VerticalAlignment="Center" Width="36" Height="36" Source="/Logout.png" Margin="20, 0, 0, 0"/>
+                        <TextBlock HorizontalAlignment = "Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20" Text="Выйти"/>
+                    </Grid>
+                </Border>
             </Grid>
         </Grid>
-        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Width="693" Height="956" Margin="315,33,0,0">
-            <Border HorizontalAlignment="Center" VerticalAlignment="Top" Width="693" Height="60" CornerRadius="8,8,8,8">
-                <Border.Background>
-                    <ImageBrush ImageSource="/Frame 20.png"/>
-                </Border.Background>
-                <TextBox HorizontalAlignment="Center" TextWrapping="Wrap" Text="Поиск" VerticalAlignment="Top" Width="693" Height="60" VerticalContentAlignment="Center" Padding="70,0,0,0" FontFamily="Verdana" FontSize="24" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FFCDCDCD"/>
-            </Border>
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Width="693" Height="956" Margin="315,0,0,0">
             <ListBox x:Name="goods" HorizontalAlignment="Left" VerticalAlignment="Top" Width="693" Height="839" Margin="0,92,0,0" ItemsSource="{Binding DataCard}" Background="{x:Null}" BorderBrush="{x:Null}">
                 <ListBox.ItemsPanel>
                     <ItemsPanelTemplate>
@@ -230,7 +228,7 @@
                         <GradientStop Color="#FFEE7A6E" Offset="1"/>
                     </LinearGradientBrush>
                 </Border.Background>
-                <Button Content="Войти" FontFamily="Verdana" FontSize="20" BorderThickness="0,0,0,0" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="White" Click="Button_Click"/>
+                <Button Content="Оплатить" FontFamily="Verdana" FontSize="20" BorderThickness="0,0,0,0" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="White" Click="Button_Click"/>
             </Border>
         </Grid>
     </Grid>

@@ -51,10 +51,12 @@
                 </Border>
             </Grid>
             <Grid HorizontalAlignment="Center" Height="92" Margin="0,872,0,0" VerticalAlignment="Top">
-                <Grid HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="227" Height="36">
-                    <Image HorizontalAlignment="Left" VerticalAlignment="Center" Width="36" Height="36" Source="/Logout.png" Margin="20, 0, 0, 0"/>
-                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20" Text="Выйти"/>
-                </Grid>
+                <Border Style="{DynamicResource BorderStyle1}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="227" Height="46" CornerRadius="20" PreviewMouseLeftButtonDown="Border_PreviewMouseLeftButtonDown_1">
+                    <Grid Width="227" Height="36">
+                        <Image HorizontalAlignment="Left" VerticalAlignment="Center" Width="36" Height="36" Source="/Logout.png" Margin="20, 0, 0, 0"/>
+                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20" Text="Выйти"/>
+                    </Grid>
+                </Border>
             </Grid>
         </Grid>
         <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Width="693" Height="926" Margin="315,33,0,0">

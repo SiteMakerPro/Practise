@@ -73,13 +73,7 @@
                 </Grid>
             </Border>
         </Grid>
-        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Width="693" Height="956" Margin="315,33,0,0">
-            <Border HorizontalAlignment="Center" VerticalAlignment="Top" Width="693" Height="60" CornerRadius="8,8,8,8">
-                <Border.Background>
-                    <ImageBrush ImageSource="/Frame 20.png"/>
-                </Border.Background>
-                <TextBox HorizontalAlignment="Center" TextWrapping="Wrap" Text="Поиск" VerticalAlignment="Top" Width="693" Height="60" VerticalContentAlignment="Center" Padding="70,0,0,0" FontFamily="Verdana" FontSize="24" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FFCDCDCD"/>
-            </Border>
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Width="693" Height="956" Margin="315,0,0,0">
             <ListBox x:Name="goods" HorizontalAlignment="Left" VerticalAlignment="Top" Width="693" Height="839" Margin="0,92,0,0" ItemsSource="{Binding DataCard}" Background="{x:Null}" BorderBrush="{x:Null}">
                 <ListBox.ItemsPanel>
                     <ItemsPanelTemplate>
