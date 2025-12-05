@@ -255,5 +255,17 @@ namespace WpfApp1
             mainWindow.Show();
             this.Close();
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            if (BasketCells.Count > 0)
+            {
+                MessageBox.Show("Оплачено");
+            }
+            else
+            {
+                MessageBox.Show("Корзина пустая");
+            }    
+        }
     }
 }

@@ -150,5 +150,24 @@ namespace WpfApp1
             catalog.ItemsSource = OrderCard;
             category = "orders";
         }
+
+        private void add_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            AdminAdd adminAdd = new AdminAdd();
+            adminAdd.Show();
+            this.Close();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Изменено");
+        }
+
+        private void Border_PreviewMouseLeftButtonDown_2(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
     }
 }

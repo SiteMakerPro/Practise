@@ -228,7 +228,7 @@
                         <GradientStop Color="#FFEE7A6E" Offset="1"/>
                     </LinearGradientBrush>
                 </Border.Background>
-                <Button Content="Оплатить" FontFamily="Verdana" FontSize="20" BorderThickness="0,0,0,0" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="White" Click="Button_Click"/>
+                <Button Content="Оплатить" FontFamily="Verdana" FontSize="20" BorderThickness="0,0,0,0" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="White" Click="Button_Click_2"/>
             </Border>
         </Grid>
     </Grid>

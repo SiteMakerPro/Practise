@@ -22,7 +22,7 @@
                 </Grid>
                 <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Typography.Capitals="AllSmallCaps" VerticalAlignment="Center" FontFamily="Verdana" FontSize="28"><Run Text="Тр"/><Run Language="ru-ru" Text="е"/><Run Text="нболон"/><LineBreak/><Run Text="shop"/></TextBlock>
             </Grid>
-            <Grid x:Name="menu" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20, 141.49, 20, 0" Width="227">
+            <Grid x:Name="menu" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20, 141.49, 20, 0" Width="227" Height="314">
                 <Border x:Name="goods" Style="{DynamicResource BorderStyle1}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="227" Height="66" CornerRadius="30,30,30,30" PreviewMouseLeftButtonDown="Border_PreviewMouseLeftButtonDown" >
                     <Grid Background="{x:Null}" >
                         <Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="/Big Parcel.png" Width="36" Height="36" Margin="20, 0, 0, 0" />
@@ -41,9 +41,16 @@
                         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20" Text="Заказы"/>
                     </Grid>
                 </Border>
+                <Border x:Name="add" Style="{DynamicResource BorderStyle1}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="227" Height="66" Margin="0,248,0,0" CornerRadius="30,30,30,30" PreviewMouseLeftButtonDown="add_PreviewMouseLeftButtonDown">
+                    <Grid>
+                        <Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="/Add properties.png" Width="36" Height="36" Margin="20, 0, 0, 0" />
+                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20" Text="Добавить"/>
+                    </Grid>
+                </Border>
+
             </Grid>
             <Grid HorizontalAlignment="Center" Height="92" Margin="0,872,0,0" VerticalAlignment="Top">
-                <Border Style="{DynamicResource BorderStyle1}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="227" Height="46" CornerRadius="20" PreviewMouseLeftButtonDown="Border_PreviewMouseLeftButtonDown_1">
+                <Border Style="{DynamicResource BorderStyle1}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="227" Height="46" CornerRadius="20" PreviewMouseLeftButtonDown="Border_PreviewMouseLeftButtonDown_2">
                     <Grid Width="227" Height="36">
                         <Image HorizontalAlignment="Left" VerticalAlignment="Center" Width="36" Height="36" Source="/Logout.png" Margin="20, 0, 0, 0"/>
                         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20" Text="Выйти"/>
@@ -127,7 +134,7 @@
                         <GradientStop Color="#FFEE7A6E" Offset="1"/>
                     </LinearGradientBrush>
                 </Border.Background>
-                <Button Content="Изменить" FontFamily="Verdana" FontSize="20" BorderThickness="0,0,0,0" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="White"/>
+                <Button Content="Изменить" FontFamily="Verdana" FontSize="20" BorderThickness="0,0,0,0" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="White" Click="Button_Click"/>
             </Border>
             <Grid HorizontalAlignment="Center" Height="596.75" Margin="0,120.75,0,0" VerticalAlignment="Top" Width="344">
                 <Label Content="Данные" HorizontalAlignment="Center" Height="34" VerticalAlignment="Top" Width="324" FontFamily="Verdana" FontSize="20"/>
