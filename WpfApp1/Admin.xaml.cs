@@ -89,7 +89,18 @@ namespace WpfApp1
                         
                 }
             }
-            
+            else if (category == "orders")
+            {
+                foreach (Order order in OrderCard)
+                {
+                    if (order.Id == itemId)
+                    {
+                        GoodField.Add(new DataField("Номер заказа", order.Id.ToString()));
+                        GoodField.Add(new DataField("Номер товара", order.Text.ToString()));
+                    }
+
+                }
+            }
         }
 
         private void Border_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -168,6 +179,43 @@ namespace WpfApp1
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             this.Close();
+        }
+
+        private void Border_PreviewMouseLeftButtonDown_3(object sender, MouseButtonEventArgs e)
+        {
+            var item = sender as Border;
+            int itemId = (int)item.Tag;
+
+            if (category == "goods")
+            {
+                for (int i = 0; i < GoodCard.Count; i++)
+                {
+                    if (GoodCard[i].Id == itemId)
+                    {
+                        GoodCard.Remove(GoodCard[i]);
+                    }
+                }
+            }
+            else if (category == "employees")
+            {
+                for (int i = 0; i < EmployeeCard.Count; i++)
+                {
+                    if (EmployeeCard[i].Id == itemId)
+                    {
+                        EmployeeCard.Remove(EmployeeCard[i]);
+                    }
+                }
+            }
+            else
+            {
+                for (int i = 0; i < OrderCard.Count; i++)
+                {
+                    if (OrderCard[i].Id == itemId)
+                    {
+                        OrderCard.Remove(OrderCard[i]);
+                    }
+                }
+            }
         }
     }
 }
