@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
-        Title="Profile" Height="1024" Width="1440">
+        Title="Profile" Height="1024" Width="1440" Activated="Window_Activated">
     <Grid Width="1440" Height="1024" Background="#FFEEEEEE">
         <Grid HorizontalAlignment="Left" Height="1024" VerticalAlignment="Center" Width="267" Background="White">
             <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,20,20,0" Width="227" Height="81.49">
@@ -22,31 +22,17 @@
                 </Grid>
                 <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Typography.Capitals="AllSmallCaps" VerticalAlignment="Center" FontFamily="Verdana" FontSize="28"><Run Text="Тр"/><Run Language="ru-ru" Text="е"/><Run Text="нболон"/><LineBreak/><Run Text="shop"/></TextBlock>
             </Grid>
-            <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20, 141.49, 20, 0" Width="227">
-                <Border HorizontalAlignment="Center" VerticalAlignment="Top" Width="227" Height="66" CornerRadius="30,30,30,30">
-                    <Border.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <LinearGradientBrush.RelativeTransform>
-                                <TransformGroup>
-                                    <ScaleTransform CenterY="0.5" CenterX="0.5"/>
-                                    <SkewTransform CenterX="0.5" CenterY="0.5"/>
-                                    <RotateTransform Angle="-90" CenterX="0.5" CenterY="0.5"/>
-                                    <TranslateTransform/>
-                                </TransformGroup>
-                            </LinearGradientBrush.RelativeTransform>
-                            <GradientStop Color="#FFF9C999"/>
-                            <GradientStop Color="#FFFABAB3" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Border.Background>
-                    <Grid>
-                        <Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="Images/People.png" Width="36" Height="36" Margin="20, 0, 0, 0" />
-                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20" Foreground="Black" Text="Данные"/>
+            <Grid x:Name="menu" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20, 141.49, 20, 0" Width="227">
+                <Border x:Name="data" Style="{DynamicResource BorderStyle1}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="227" Height="66" CornerRadius="30,30,30,30" PreviewMouseLeftButtonDown="data_PreviewMouseLeftButtonDown" >
+                    <Grid Background="{x:Null}" >
+                        <Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="Images/Order Completed.png" Width="36" Height="36" Margin="20, 0, 0, 0" />
+                        <TextBlock  HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20" Text="Данные"/>
                     </Grid>
                 </Border>
-                <Border Style="{DynamicResource BorderStyle1}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="227" Height="66" Margin="0,76,0,0" CornerRadius="30,30,30,30">
+                <Border x:Name="orders" Style="{DynamicResource BorderStyle1}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="227" Height="66" Margin="0,76,0,0" CornerRadius="30,30,30,30" PreviewMouseLeftButtonDown="orders_PreviewMouseLeftButtonDown">
                     <Grid>
-                        <Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="/Images/Big Parcel.png" Width="36" Height="36" Margin="20, 0, 0, 0" />
-                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20" Text="Заказы"/>
+                        <Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="Images/Big Parcel.png" Width="36" Height="36" Margin="20, 0, 0, 0" />
+                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20" Foreground="Black" Text="Заказы"/>
                     </Grid>
                 </Border>
             </Grid>

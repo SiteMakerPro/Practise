@@ -12,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApp2.Classes;
+using WpfApp2.Models;
 
 namespace WpfApp2
 {
@@ -20,29 +22,58 @@ namespace WpfApp2
     /// </summary>
     public partial class Admin : Window
     {
+        public users _currentUser;
         public ObservableCollection<Classes.Employee> EmployeeCard { get; set; }
         public ObservableCollection<Classes.Good> GoodCard { get; set; }
         public ObservableCollection<Classes.Order> OrderCard { get; set; }
         public ObservableCollection<Classes.DataField> GoodField { get; set; }
         public string category = "goods";
-        public Admin()
+        public int order = 1;
+        public Admin(users user)
         {
             InitializeComponent();
-            EmployeeCard = new ObservableCollection<Classes.Employee>
-            {
-                new Classes.Employee(1, "Ктотов Ктото Ктотович", "Оператор ПВЗ", "pack://application:,,,/Images/good.jpg"),
-                new Classes.Employee(2, "Ктотов Ктото Ктотович", "Администратор", "pack://application:,,,/Images/good.jpg"),
-                new Classes.Employee(3, "Ктотов Ктото Ктотович", "Оператор ПВЗ", "pack://application:,,,/Images/good.jpg"),
-                new Classes.Employee(4, "Ктотов Ктото Ктотович", "Оператор ПВЗ", "pack://application:,,,/Images/good.jpg")
-            };
+            _currentUser = user;
 
-            GoodCard = new ObservableCollection<Classes.Good>
+            var usersList = DbService.GetAllUsers();
+            var goodList = DbService.GetAllGoods();
+
+            EmployeeCard = new ObservableCollection<Classes.Employee>{};
+
+            foreach(users users in usersList)
             {
-                new Classes.Good(1, "Гантель гексагональная обрезиненная 12,5 кг", "Инвентарь", "pack://application:,,,/Images/good.jpg", 1299 ),
-                new Classes.Good(2, "Гантель гексагональная обрезиненная 25 кг", "Инвентарь", "pack://application:,,,/Images/good.jpg", 1299 ),
-                new Classes.Good(3, "Гантель гексагональная обрезиненная 50 кг", "Инвентарь", "pack://application:,,,/Images/good.jpg", 1299 ),
-                new Classes.Good(4, "Гантель гексагональная обрезиненная 100 кг", "Инвентарь", "pack://application:,,,/Images/good.jpg", 1299 ),
-            };
+                if (users.IdR == 1 && users.IdU != _currentUser.IdU)
+                {
+                    EmployeeCard.Add(new Employee(users.IdU, order, users.Lastname, users.Firstname, users.Patronymic, "Админ", "pack://application:,,,/Images/human.png"));
+                    order++;
+                }
+                if (users.IdR == 3)
+                {
+                    EmployeeCard.Add(new Employee(users.IdU, order, users.Lastname, users.Firstname, users.Patronymic, "ПВЗ", "pack://application:,,,/Images/human.png"));
+                    order++;
+                }
+            }
+            order = 0;
+
+            GoodCard = new ObservableCollection<Classes.Good> { };
+
+            foreach (goods good in goodList)
+            {
+                if (good.IdCa == 1)
+                {
+                    GoodCard.Add(new Good(good.IdG, order, good.Name, "Инвентарь", good.Img, good.Price));
+                    order++;
+                }
+                else if (good.IdCa == 2)
+                {
+                    GoodCard.Add(new Good(good.IdG, order, good.Name, "Одежда", good.Img, good.Price));
+                    order++;
+                }
+                else if (good.IdCa == 3)
+                {
+                    GoodCard.Add(new Good(good.IdG, order, good.Name, "Обувь", good.Img, good.Price));
+                    order++;
+                }
+            }
 
             OrderCard = new ObservableCollection<Classes.Order>
             {
@@ -79,9 +110,11 @@ namespace WpfApp2
             {
                 foreach (Classes.Employee employee in EmployeeCard)
                 {
-                    if (employee.Id == itemId)
+                    if (employee.Order == itemId)
                     {
-                        GoodField.Add(new Classes.DataField("Имя", employee.Name));
+                        GoodField.Add(new Classes.DataField("Фамилия", employee.Lastname));
+                        GoodField.Add(new Classes.DataField("Имя", employee.Firstname));
+                        GoodField.Add(new Classes.DataField("Отчество", employee.Patronymic));
                         GoodField.Add(new Classes.DataField("Должность", employee.Text));
                     }
 
@@ -158,7 +191,7 @@ namespace WpfApp2
 
         private void add_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            AdminAdd adminAdd = new AdminAdd();
+            AdminAdd adminAdd = new AdminAdd(_currentUser);
             adminAdd.Show();
             this.Close();
         }

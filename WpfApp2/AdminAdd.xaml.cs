@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpfApp2.Classes;
+using WpfApp2.Models;
 
 namespace WpfApp2
 {
@@ -21,12 +22,15 @@ namespace WpfApp2
     /// </summary>
     public partial class AdminAdd : Window
     {
+        public users _currentUser;
         public ObservableCollection<DataField> EmployeeField { get; set; }
         public ObservableCollection<DataField> GoodField { get; set; }
         public ObservableCollection<DataField> OrderField { get; set; }
-        public AdminAdd()
+        public AdminAdd(users user)
         {
             InitializeComponent();
+
+            _currentUser = user;
 
             EmployeeField = new ObservableCollection<DataField>
             {
@@ -49,7 +53,7 @@ namespace WpfApp2
 
         private void edit_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            Admin admin = new Admin();
+            Admin admin = new Admin(_currentUser);
             admin.Show();
             this.Close();
         }

@@ -252,7 +252,7 @@
                             </Border>
                         </Grid>
                         <Grid HorizontalAlignment = "Center" Height="104" Margin="0,474,0,0" VerticalAlignment="Top" Width="520">
-                            <Border HorizontalAlignment = "Center" Height="63" VerticalAlignment="Top" Width="520" CornerRadius="8,8,8,8" >
+                            <Border HorizontalAlignment = "Center" Height="63" VerticalAlignment="Top" Width="520" CornerRadius="8,8,8,8" PreviewMouseLeftButtonDown="Border_PreviewMouseLeftButtonDown" >
                                 <Border.Background>
                                     <LinearGradientBrush EndPoint = "0.5,1" StartPoint="0.5,0">
                                         <LinearGradientBrush.RelativeTransform>
@@ -267,7 +267,7 @@
                                         <GradientStop Color="#FFEE7A6E" Offset="1"/>
                                     </LinearGradientBrush>
                                 </Border.Background>
-                                <Button Content = "Войти" FontFamily="Verdana" FontSize="20" Foreground="White" BorderBrush="{x:Null}" Background="{x:Null}" Click="Button_Click_2"/>
+                                <Button Content = "Войти" FontFamily="Verdana" FontSize="20" Foreground="White" BorderBrush="{x:Null}" Background="{x:Null}"/>
                             </Border>
                             <Grid HorizontalAlignment = "Center" Height="30" VerticalAlignment="Top" Width="239" Margin="0,74,0,0">
                                 <TextBlock HorizontalAlignment = "Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="151" Margin="0,0,0,7" FontFamily="Verdana" FontSize="20" Text="Нет аккаунта?"/>

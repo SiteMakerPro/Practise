@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpfApp2.Classes;
+using WpfApp2.Models;
 
 namespace WpfApp2
 {
@@ -21,6 +22,7 @@ namespace WpfApp2
     /// </summary>
     public partial class User : Window
     {
+        private users _currentUser;
         public ObservableCollection<BasketCell> BasketCells { get; set; }
         public string category = "Инвентарь";
         public MainWindow mainWindow = new MainWindow();
@@ -28,9 +30,11 @@ namespace WpfApp2
         public decimal halfPrice = 0;
         public decimal taxPrice = 0;
         public decimal totalPrice = 0;
-        public User()
+        public User(users user)
         {
             InitializeComponent();
+
+            _currentUser = user;
 
             BasketCells = new ObservableCollection<BasketCell> { };
 

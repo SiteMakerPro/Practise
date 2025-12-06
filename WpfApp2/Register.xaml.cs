@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApp2.Models;
 
 namespace WpfApp2
 {
@@ -82,6 +83,31 @@ namespace WpfApp2
             if (passwordInput.Text == "")
             {
                 passwordInput.Text = "Пароль";
+            }
+        }
+
+        private void Border_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var newUser = new users
+            {
+                Login = loginInput.Text,
+                Password = passwordInput.Text
+            };
+
+            bool success = DbService.RegisterUser(newUser);
+
+            if (success)
+            {
+                MessageBox.Show("Регистрация прошла успешно! Теперь вы можете войти в систему.");
+
+                // Открываем окно пользователя (роль по умолчанию 'user')
+                User user = new User(newUser);
+                user.Show();
+
+                // Закрываем текущее окно и окно авторизации
+                var mainWindow = (MainWindow)Owner;
+                mainWindow?.Close();
+                this.Close();
             }
         }
     }

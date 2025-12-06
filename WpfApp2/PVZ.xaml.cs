@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpfApp2.Classes;
+using WpfApp2.Models;
 
 namespace WpfApp2
 {
@@ -21,21 +22,18 @@ namespace WpfApp2
     /// </summary>
     public partial class PVZ : Window
     {
+        private users _currentUser;
         public ObservableCollection<Good> GoodCard { get; set; }
         public ObservableCollection<Order> OrderCard { get; set; }
         public ObservableCollection<DataField> InputField { get; set; }
         public string category = "orders";
-        public PVZ()
+        public PVZ(users user)
         {
             InitializeComponent();
 
-            GoodCard = new ObservableCollection<Good>
-            {
-                new Good(1, "Гантель гексагональная обрезиненная 12,5 кг", "Инвентарь", "pack://application:,,,/Images/good.jpg", 1299 ),
-                new Good(2, "Гантель гексагональная обрезиненная 25 кг", "Инвентарь", "pack://application:,,,/Images/good.jpg", 1299 ),
-                new Good(3, "Гантель гексагональная обрезиненная 50 кг", "Инвентарь", "pack://application:,,,/Images/good.jpg", 1299 ),
-                new Good(4, "Гантель гексагональная обрезиненная 100 кг", "Инвентарь", "pack://application:,,,/Images/good.jpg", 1299 ),
-            };
+            _currentUser = user;
+
+            GoodCard = new ObservableCollection<Good>{};
 
             OrderCard = new ObservableCollection<Order>
             {

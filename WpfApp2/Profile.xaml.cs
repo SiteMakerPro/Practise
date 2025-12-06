@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApp2.Classes;
 
 namespace WpfApp2
 {
@@ -55,6 +56,45 @@ namespace WpfApp2
             DataFields.Add(new Classes.DataField("Логин", Users[0].Login));
             DataFields.Add(new Classes.DataField("Почта", Users[0].Email));
             DataFields.Add(new Classes.DataField("Пароль", Users[0].Password));
+        }
+
+        private void Window_Activated(object sender, EventArgs e)
+        {
+            foreach (var elem in menu.Children.OfType<Border>())
+            {
+                if (elem.Name != "data")
+                {
+                    elem.Style = (Style)Application.Current.FindResource("BorderStyle1");
+                }
+            }
+            data.Style = (Style)Application.Current.FindResource("BtnActivated");
+        }
+        private void orders_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            foreach (var elem in menu.Children.OfType<Border>())
+            {
+                if (elem.Name != "orders")
+                {
+                    elem.Style = (Style)Application.Current.FindResource("BorderStyle1");
+                }
+            }
+            orders.Style = (Style)Application.Current.FindResource("BtnActivated");
+            //catalog.ItemsSource = OrderCard;
+            //category = "orders";
+        }
+
+        private void data_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            foreach (var elem in menu.Children.OfType<Border>())
+            {
+                if (elem.Name != "data")
+                {
+                    elem.Style = (Style)Application.Current.FindResource("BorderStyle1");
+                }
+            }
+            data.Style = (Style)Application.Current.FindResource("BtnActivated");
+            //catalog.ItemsSource = GoodCard;
+            //category = "goods";
         }
     }
 }

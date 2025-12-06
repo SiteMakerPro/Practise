@@ -3,27 +3,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace WpfApp2.Classes
 {
     public class Good
     {
         public int Id { get; set; }
+        public int Order {  get; set; }
         public string Name { get; set; }
         public string Category { get; set; }
         public decimal Text { get; set; }
-        public string BigImagePath { get; set; }
+        public byte[] BigImagePath { get; set; }
         public int Row { get; set; }
         public int Col { get; set; }
 
-        public Good(int id, string name, string category, string bigImagePath, decimal text = 0)
+        public Good(int id, int order, string name, string category, byte[] bigImagePath, decimal text = 0)
         {
             Id = id;
+            Order = order;
             Name = name;
             Category = category;
             BigImagePath = bigImagePath;
             Text = text;
-            switch (id)
+            switch (order)
             {
                 case 1:
                 case 2:
@@ -34,7 +37,7 @@ namespace WpfApp2.Classes
                     Row = 2;
                     break;
             }
-            if (id % 2 == 0)
+            if (order % 2 == 0)
             {
                 Col = 3;
             }

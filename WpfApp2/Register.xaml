@@ -255,7 +255,7 @@
                             </Border>
                         </Grid>
                         <Grid HorizontalAlignment = "Center" Height="104" Margin="0,474,0,0" VerticalAlignment="Top" Width="520">
-                            <Border HorizontalAlignment = "Center" Height="63" VerticalAlignment="Top" Width="520" CornerRadius="8,8,8,8" >
+                            <Border HorizontalAlignment = "Center" Height="63" VerticalAlignment="Top" Width="520" CornerRadius="8,8,8,8" PreviewMouseLeftButtonDown="Border_PreviewMouseLeftButtonDown" >
                                 <Border.Background>
                                     <LinearGradientBrush EndPoint = "0.5,1" StartPoint="0.5,0">
                                         <LinearGradientBrush.RelativeTransform>

@@ -9,19 +9,27 @@ namespace WpfApp2.Classes
     public class Employee
     {
         public int Id { get; set; }
+        public int Order { get; set; }
         public string Name { get; set; }
+        public string Lastname { get; set; }
+        public string Firstname { get; set; }
+        public string Patronymic { get; set; }
         public string Text { get; set; }
         public string BigImagePath { get; set; }
         public int Row { get; set; }
         public int Col { get; set; }
 
-        public Employee(int id, string name, string text, string bigImagePath)
+        public Employee(int id, int order, string lastname, string firstname, string patronymic, string text, string bigImagePath)
         {
             Id = id;
-            Name = name;
+            Order = order;
+            Name = $"{lastname} {firstname} {patronymic}";
+            Lastname = lastname;
+            Firstname = firstname;
+            Patronymic = patronymic;
             Text = text;
             BigImagePath = bigImagePath;
-            switch (id)
+            switch (order)
             {
                 case 1:
                 case 2:
@@ -32,7 +40,7 @@ namespace WpfApp2.Classes
                     Row = 2;
                     break;
             }
-            if (id % 2 == 0)
+            if (order % 2 == 0)
             {
                 Col = 3;
             }

@@ -41,7 +41,7 @@
                         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20" Text="Заказы"/>
                     </Grid>
                 </Border>
-                <Border x:Name="add" Style="{DynamicResource BorderStyle1}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="227" Height="66" Margin="0,248,0,0" CornerRadius="30,30,30,30" PreviewMouseLeftButtonDown="add_PreviewMouseLeftButtonDown">
+                <Border x:Name="add" Style="{DynamicResource BorderStyle1}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="227" Height="66" Margin="0,238,0,0" CornerRadius="30,30,30,30" PreviewMouseLeftButtonDown="add_PreviewMouseLeftButtonDown">
                     <Grid>
                         <Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="Images/Add properties.png" Width="36" Height="36" Margin="20, 0, 0, 0" />
                         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20" Text="Добавить"/>
@@ -92,7 +92,7 @@
                                 <Image HorizontalAlignment = "Center" Height="200" VerticalAlignment="Top" Margin="0, 20, 0, 0" Width="260" Source="{Binding BigImagePath}" Stretch="Fill"/>
                                 <TextBlock HorizontalAlignment = "Left" Height="38" Margin="20,240,0,0" TextWrapping="Wrap" Text="{Binding Name}" VerticalAlignment="Top" Width="260" FontFamily="Verdana" FontSize="16"/>
                                 <TextBlock HorizontalAlignment = "Left" Height="21" Margin="20,298,0,0" TextWrapping="Wrap" Text="{Binding Text}" VerticalAlignment="Top" Width="121" FontFamily="Verdana" FontSize="16"/>
-                                <Border Tag="{Binding Id}" HorizontalAlignment = "Left" Height="41" Margin="20,339,0,0" VerticalAlignment="Top" Width="199" CornerRadius="8,8,8,8" PreviewMouseLeftButtonDown="Border_PreviewMouseLeftButtonDown_1" >
+                                <Border Tag="{Binding Order}" HorizontalAlignment = "Left" Height="41" Margin="20,339,0,0" VerticalAlignment="Top" Width="199" CornerRadius="8,8,8,8" PreviewMouseLeftButtonDown="Border_PreviewMouseLeftButtonDown_1" >
                                     <Border.Background>
                                         <LinearGradientBrush EndPoint = "0.5,1" StartPoint="0.5,0">
                                             <LinearGradientBrush.RelativeTransform>
@@ -110,7 +110,7 @@
                                     <Button Content = "Изменить данные" FontFamily="Verdana" FontSize="18" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White"/>
                                 </Border>
                                 <Border Tag="{Binding Id}" HorizontalAlignment = "Right" Height="41" Margin="0,339,20,0" VerticalAlignment="Top" Width="41" CornerRadius="8,8,8,8" Padding="5.5" Background="#FFF15E5E" PreviewMouseLeftButtonDown="Border_PreviewMouseLeftButtonDown_3">
-                                    <Image Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Cancel2.png"/>
+                                    <Image Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Source="Images/Cancel2.png"/>
                                 </Border>
                             </Grid>
                         </Border>
