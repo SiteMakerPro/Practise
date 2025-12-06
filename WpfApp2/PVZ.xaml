@@ -1,0 +1,132 @@
+﻿<Window x:Class="WpfApp2.PVZ"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="PVZ" Height="1024" Width="1440">
+    <Grid>
+        <Grid HorizontalAlignment="Left" Height="1024" VerticalAlignment="Top" Width="267" Background="White">
+            <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,20,20,0" Width="227" Height="81.49">
+                <Grid HorizontalAlignment="Left" Height="60" VerticalAlignment="Center" Width="60" RenderTransformOrigin="0.5,0.5">
+                    <Grid.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-45"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Grid.RenderTransform>
+                    <Image Margin="0,0,0,0" Source="/Images/logo.png" Stretch="Fill"/>
+                </Grid>
+                <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Typography.Capitals="AllSmallCaps" VerticalAlignment="Center" FontFamily="Verdana" FontSize="28"><Run Text="Тр"/><Run Language="ru-ru" Text="е"/><Run Text="нболон"/><LineBreak/><Run Text="shop"/></TextBlock>
+            </Grid>
+            <Grid x:Name="menu" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20, 141.49, 20, 0" Width="227">
+                <Border x:Name="orders" Style="{DynamicResource BorderStyle1}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="227" Height="66" CornerRadius="30,30,30,30" PreviewMouseLeftButtonDown="orders_PreviewMouseLeftButtonDown" >
+                    <Grid Background="{x:Null}" >
+                        <Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="Images/Order Completed.png" Width="36" Height="36" Margin="20, 0, 0, 0" />
+                        <TextBlock  HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20" Text="Заказы"/>
+                    </Grid>
+                </Border>
+                <Border x:Name="goods" Style="{DynamicResource BorderStyle1}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="227" Height="66" Margin="0,76,0,0" CornerRadius="30,30,30,30" PreviewMouseLeftButtonDown="goods_PreviewMouseLeftButtonDown">
+                    <Grid>
+                        <Image HorizontalAlignment="Left" VerticalAlignment="Center" Source="Images/Big Parcel.png" Width="36" Height="36" Margin="20, 0, 0, 0" />
+                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20" Foreground="Black" Text="Товары"/>
+                    </Grid>
+                </Border>
+            </Grid>
+            <Grid HorizontalAlignment="Center" Height="92" Margin="0,872,0,0" VerticalAlignment="Top">
+                <Border Style="{DynamicResource BorderStyle1}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="227" Height="46" CornerRadius="20" PreviewMouseLeftButtonDown="Border_PreviewMouseLeftButtonDown_1">
+                    <Grid Width="227" Height="36">
+                        <Image HorizontalAlignment="Left" VerticalAlignment="Center" Width="36" Height="36" Source="Images/Logout.png" Margin="20, 0, 0, 0"/>
+                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20" Text="Выйти"/>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="1024" VerticalAlignment="Top" Width="384" Background="White" Margin="1056,0,0,0">
+            <Border HorizontalAlignment="Center" Height="78" VerticalAlignment="Top" Width="384" BorderThickness="0,0,0,2" BorderBrush="#FFCDCDCD" >
+                <TextBlock TextWrapping="Wrap" FontFamily="Verdana" FontSize="24" Padding="21,21,0,0" Height="80.75" Text="Изменение данных"/>
+            </Border>
+            <Grid HorizontalAlignment="Center" Height="596.75" Margin="0,121,0,0" VerticalAlignment="Top" Width="344">
+                <Label Content="Данные" HorizontalAlignment="Center" Height="34" VerticalAlignment="Top" Width="324" FontFamily="Verdana" FontSize="20"/>
+                <ListBox BorderBrush="{x:Null}" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,63,0,0" ItemsSource="{Binding InputField}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border HorizontalAlignment="Center" Height="56" VerticalAlignment="Top" Width="324" BorderBrush="#FFCDCDCD" BorderThickness="1,1,1,1" CornerRadius="8,8,8,8" Margin="0,10,0,0">
+                                <Grid>
+                                    <Grid HorizontalAlignment="Left" Height="36" Margin="20,10,0,0" VerticalAlignment="Top" Width="284">
+                                        <TextBlock HorizontalAlignment="Left" Height="20" Text="{Binding Name}" VerticalAlignment="Center" Width="127" FontFamily="Verdana"/>
+                                        <TextBox HorizontalAlignment="Right" Height="20" VerticalAlignment="Center" Width="150" FontFamily="Verdana" Foreground="#FFF2A65B" TextAlignment="Left" Text="{Binding Value}" BorderBrush="{x:Null}"/>
+                                    </Grid>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+            <Border HorizontalAlignment="Center" Height="63" VerticalAlignment="Bottom" Width="324" Margin="0,0,0,60" CornerRadius="8,8,8,8" Background="#FFF15E5E" >
+                <Button Content="Закрыть заказ" FontFamily="Verdana" FontSize="20" BorderThickness="0,0,0,0" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="White" Click="Button_Click"/>
+            </Border>
+        </Grid>
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Width="693" Height="926" Margin="315,0,0,0">
+            <ListBox x:Name="catalog" HorizontalAlignment="Left" VerticalAlignment="Top" Width="693" Height="839" Margin="0,92,0,0" ItemsSource="{Binding OrderCard}" Background="{x:Null}" BorderBrush="{x:Null}">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="400"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="400"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="300"/>
+                            </Grid.ColumnDefinitions>
+                        </Grid>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListBoxItem}">
+                        <Setter Property="Grid.Row" Value="{Binding Row}"/>
+                        <Setter Property="Grid.Column" Value="{Binding Col}"/>
+                        <Setter Property="Padding" Value="0"/>
+                        <Setter Property="Margin" Value="0"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderThickness = "1" CornerRadius="8,8,8,8" Background="White" Width="300" Height="400">
+                            <Grid>
+                                <Image HorizontalAlignment = "Center" Height="200" VerticalAlignment="Top" Margin="0, 20, 0, 0" Width="260" Source="{Binding BigImagePath}" Stretch="Fill"/>
+                                <TextBlock HorizontalAlignment = "Left" Height="38" Margin="20,240,0,0" TextWrapping="Wrap" Text="{Binding Name}" VerticalAlignment="Top" Width="260" FontFamily="Verdana" FontSize="16"/>
+                                <TextBlock HorizontalAlignment = "Left" Height="21" Margin="20,298,0,0" TextWrapping="Wrap" Text="{Binding Text}" VerticalAlignment="Top" Width="121" FontFamily="Verdana" FontSize="16"/>
+                                <Border Tag="{Binding Id}" HorizontalAlignment = "Left" Height="41" Margin="20,339,0,0" VerticalAlignment="Top" Width="260" CornerRadius="8,8,8,8" PreviewMouseLeftButtonDown="Border_PreviewMouseLeftButtonDown_1" >
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint = "0.5,1" StartPoint="0.5,0">
+                                            <LinearGradientBrush.RelativeTransform>
+                                                <TransformGroup>
+                                                    <ScaleTransform CenterY = "0.5" CenterX="0.5"/>
+                                                    <SkewTransform CenterX = "0.5" CenterY="0.5"/>
+                                                    <RotateTransform Angle = "-90" CenterX="0.5" CenterY="0.5"/>
+                                                    <TranslateTransform/>
+                                                </TransformGroup>
+                                            </LinearGradientBrush.RelativeTransform>
+                                            <GradientStop Color = "#FFF2A65B" />
+                                            <GradientStop Color="#FFEE7A6E" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <Button Content = "Информация" FontFamily="Verdana" FontSize="18" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White"/>
+                                </Border>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+
+    </Grid>
+</Window>
