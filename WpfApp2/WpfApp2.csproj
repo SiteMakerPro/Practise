@@ -8,4 +8,82 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Images\Account Male.png" />
+    <None Remove="Images\Add properties.png" />
+    <None Remove="Images\Bank Cards.png" />
+    <None Remove="Images\Bench Press.png" />
+    <None Remove="Images\Big Parcel.png" />
+    <None Remove="Images\box.png" />
+    <None Remove="Images\Cancel2.png" />
+    <None Remove="Images\Close.png" />
+    <None Remove="Images\Edit.png" />
+    <None Remove="Images\Edit2.png" />
+    <None Remove="Images\Energy Drink.png" />
+    <None Remove="Images\Frame 20.png" />
+    <None Remove="Images\good.jpg" />
+    <None Remove="Images\good.png" />
+    <None Remove="Images\goodCard.jpg" />
+    <None Remove="Images\Group.png" />
+    <None Remove="Images\Home Page.png" />
+    <None Remove="Images\human.png" />
+    <None Remove="Images\image 3.jpg" />
+    <None Remove="Images\image 4.jpg" />
+    <None Remove="Images\Jersey.png" />
+    <None Remove="Images\Knight.png" />
+    <None Remove="Images\Login Rounded.png" />
+    <None Remove="Images\logo.png" />
+    <None Remove="Images\Logout.png" />
+    <None Remove="Images\Order Completed.png" />
+    <None Remove="Images\Order History.png" />
+    <None Remove="Images\orderCard.png" />
+    <None Remove="Images\People.png" />
+    <None Remove="Images\Profile.png" />
+    <None Remove="Images\Qr Code.png" />
+    <None Remove="Images\Roller Skates.png" />
+    <None Remove="Images\Search.png" />
+    <None Remove="Images\Soccer Ball.png" />
+    <None Remove="Images\Stack Of Paper.png" />
+    <None Remove="Images\t-shirt.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Account Male.png" />
+    <Resource Include="Images\Add properties.png" />
+    <Resource Include="Images\Bank Cards.png" />
+    <Resource Include="Images\Bench Press.png" />
+    <Resource Include="Images\Big Parcel.png" />
+    <Resource Include="Images\box.png" />
+    <Resource Include="Images\Cancel2.png" />
+    <Resource Include="Images\Close.png" />
+    <Resource Include="Images\Edit.png" />
+    <Resource Include="Images\Edit2.png" />
+    <Resource Include="Images\Energy Drink.png" />
+    <Resource Include="Images\Frame 20.png" />
+    <Resource Include="Images\good.jpg" />
+    <Resource Include="Images\good.png" />
+    <Resource Include="Images\goodCard.jpg" />
+    <Resource Include="Images\Group.png" />
+    <Resource Include="Images\Home Page.png" />
+    <Resource Include="Images\human.png" />
+    <Resource Include="Images\image 3.jpg" />
+    <Resource Include="Images\image 4.jpg" />
+    <Resource Include="Images\Jersey.png" />
+    <Resource Include="Images\Knight.png" />
+    <Resource Include="Images\Login Rounded.png" />
+    <Resource Include="Images\logo.png" />
+    <Resource Include="Images\Logout.png" />
+    <Resource Include="Images\Order Completed.png" />
+    <Resource Include="Images\Order History.png" />
+    <Resource Include="Images\orderCard.png" />
+    <Resource Include="Images\People.png" />
+    <Resource Include="Images\Profile.png" />
+    <Resource Include="Images\Qr Code.png" />
+    <Resource Include="Images\Roller Skates.png" />
+    <Resource Include="Images\Search.png" />
+    <Resource Include="Images\Soccer Ball.png" />
+    <Resource Include="Images\Stack Of Paper.png" />
+    <Resource Include="Images\t-shirt.jpg" />
+  </ItemGroup>
+
 </Project>

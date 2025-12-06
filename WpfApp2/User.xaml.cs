@@ -240,5 +240,12 @@ namespace WpfApp2
                 MessageBox.Show("Корзина пустая");
             }
         }
+
+        private void Border_PreviewMouseLeftButtonDown_2(object sender, MouseButtonEventArgs e)
+        {
+            Profile profile = new Profile();
+            profile.Show();
+            this.Close();
+        }
     }
 }

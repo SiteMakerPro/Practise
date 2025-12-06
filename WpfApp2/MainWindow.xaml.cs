@@ -30,7 +30,7 @@ namespace WpfApp2
                 new Classes.Card(2, "Гантель гексагональная обрезиненная 25 кг", "Инвентарь", "pack://application:,,,/Images/good.jpg", 1299 ),
                 new Classes.Card(3, "Гантель гексагональная обрезиненная 50 кг", "Инвентарь", "pack://application:,,,/Images/good.jpg", 1299 ),
                 new Classes.Card(4, "Гантель гексагональная обрезиненная 100 кг", "Инвентарь", "pack://application:,,,/Images/good.jpg", 1299 ),
-                new Classes.Card(5, "Гантель гексагональная обрезиненная 100 кг", "Одежда", "pack://application:,,,/Images/clothes.jpg", 999 )
+                new Classes.Card(5, "Гантель гексагональная обрезиненная 100 кг", "Одежда", "pack://application:,,,/Images/t-shirt.jpg", 999 )
             };
 
             DataCard = new ObservableCollection<Classes.Card> { };
