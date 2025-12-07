@@ -148,7 +148,7 @@
                                 <Grid>
                                     <Grid HorizontalAlignment="Left" Height="36" Margin="20,10,0,0" VerticalAlignment="Top" Width="284">
                                         <TextBlock HorizontalAlignment="Left" Height="20" Text="{Binding Name}" VerticalAlignment="Center" Width="77" FontFamily="Verdana"/>
-                                        <TextBox HorizontalAlignment="Right" Height="20" VerticalAlignment="Center" Width="200" FontFamily="Verdana" Foreground="#FFF2A65B" TextAlignment="Left" Text="{Binding Value}" BorderBrush="{x:Null}"/>
+                                        <TextBox Tag="{Binding Name}" HorizontalAlignment="Right" Height="20" VerticalAlignment="Center" Width="200" FontFamily="Verdana" Foreground="#FFF2A65B" TextAlignment="Left" Text="{Binding Value}" BorderBrush="{x:Null}" LostFocus="TextBox_LostFocus"/>
                                     </Grid>
                                 </Grid>
                             </Border>

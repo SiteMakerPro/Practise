@@ -205,40 +205,50 @@ namespace WpfApp2
             });
         }
 
+        public static List<categories> GetAllCategories()
+        {
+            string query = "SELECT * FROM categories ORDER BY IdCa";
+
+            return GetData(query, reader => new categories
+            {
+                IdCa = reader.GetInt32("IdCa"),
+                Name = reader.GetString("Name")
+            });
+        }
+
         // Метод для обновления данных пользователя
-        //public static bool UpdateUser(User user)
-        //{
-        //    try
-        //    {
-        //        string query = @"UPDATE users 
-        //                    SET surname = @surname, 
-        //                        name = @name, 
-        //                        patronymic = @patronymic, 
-        //                        role = @role, 
-        //                        login = @login, 
-        //                        password = @password 
-        //                    WHERE id = @id";
+        public static bool UpdateEmployee(users user)
+        {
+            try
+            {
+                string query = @"UPDATE users 
+                            SET IdR = @idR, 
+                                Lastname = @lastname, 
+                                Firstname = @firstname, 
+                                Patronymic = @patronymic, 
+                                Phone = @email 
+                            WHERE IdU = @id";
 
-        //        var parameters = new Dictionary<string, object>
-        //        {
-        //            ["@id"] = user.Id,
-        //            ["@surname"] = user.Surname,
-        //            ["@name"] = user.Name,
-        //            ["@patronymic"] = user.Patronymic,
-        //            ["@role"] = user.Role,
-        //            ["@login"] = user.Login,
-        //            ["@password"] = user.Password
-        //        };
+                var parameters = new Dictionary<string, object>
+                {
+                    ["@id"] = user.IdU,
+                    ["@idR"] = user.IdR,
+                    ["@lastname"] = user.Lastname,
+                    ["@firstname"] = user.Firstname,
+                    ["@patronymic"] = user.Patronymic,
+                    ["@phone"] = user.Phone,
+                    ["@email"] = user.Login,
+                };
 
-        //        ExecuteNonQueryWithParameters(query, parameters);
-        //        return true;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show($"Ошибка обновления пользователя: {ex.Message}");
-        //        return false;
-        //    }
-        //}
+                ExecuteNonQueryWithParameters(query, parameters);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка обновления пользователя: {ex.Message}");
+                return false;
+            }
+        }
 
         //// Метод для удаления пользователя по ID
         //public static bool DeleteUser(int userId)

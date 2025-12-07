@@ -23,23 +23,25 @@ namespace WpfApp2
     public partial class Admin : Window
     {
         public users _currentUser;
-        public ObservableCollection<Classes.Employee> EmployeeCard { get; set; }
-        public ObservableCollection<Classes.Good> GoodCard { get; set; }
-        public ObservableCollection<Classes.Order> OrderCard { get; set; }
-        public ObservableCollection<Classes.DataField> GoodField { get; set; }
+        public ObservableCollection<Employee> EmployeeCard { get; set; }
+        public ObservableCollection<Good> GoodCard { get; set; }
+        public ObservableCollection<Order> OrderCard { get; set; }
+        public ObservableCollection<DataField> GoodField { get; set; }
         public string category = "goods";
         public int order = 1;
+        public int itemOrder;
+        public int itemId;
         public Admin(users user)
         {
             InitializeComponent();
             _currentUser = user;
 
-            var usersList = DbService.GetAllUsers();
-            var goodList = DbService.GetAllGoods();
+            
+            var categoriesList = DbService.GetAllCategories();
 
-            EmployeeCard = new ObservableCollection<Classes.Employee>{};
+            EmployeeCard = new ObservableCollection<Employee>{};
 
-            foreach(users users in usersList)
+            foreach(users users in App.usersList)
             {
                 if (users.IdR == 1 && users.IdU != _currentUser.IdU)
                 {
@@ -54,36 +56,23 @@ namespace WpfApp2
             }
             order = 0;
 
-            GoodCard = new ObservableCollection<Classes.Good> { };
+            GoodCard = new ObservableCollection<Good> { };
 
-            foreach (goods good in goodList)
+            foreach (goods good in App.goodList)
             {
-                if (good.IdCa == 1)
-                {
-                    GoodCard.Add(new Good(good.IdG, order, good.Name, "Инвентарь", good.Img, good.Price));
-                    order++;
-                }
-                else if (good.IdCa == 2)
-                {
-                    GoodCard.Add(new Good(good.IdG, order, good.Name, "Одежда", good.Img, good.Price));
-                    order++;
-                }
-                else if (good.IdCa == 3)
-                {
-                    GoodCard.Add(new Good(good.IdG, order, good.Name, "Обувь", good.Img, good.Price));
-                    order++;
-                }
+                GoodCard.Add(new Good(good.IdG, order, good.Name, categoriesList[good.IdCa].Name, good.Img, good.Price));
+                order++;
             }
 
-            OrderCard = new ObservableCollection<Classes.Order>
+            OrderCard = new ObservableCollection<Order>
             {
-                new Classes.Order(1, "Заказ", 1, "pack://application:,,,/Images/good.jpg"),
-                new Classes.Order(2, "Заказ", 2, "pack://application:,,,/Images/good.jpg"),
-                new Classes.Order(3, "Заказ", 3, "pack://application:,,,/Images/good.jpg"),
-                new Classes.Order(4, "Заказ", 4, "pack://application:,,,/Images/good.jpg"),
+                new Order(1, "Заказ", 1, "pack://application:,,,/Images/good.jpg"),
+                new Order(2, "Заказ", 2, "pack://application:,,,/Images/good.jpg"),
+                new Order(3, "Заказ", 3, "pack://application:,,,/Images/good.jpg"),
+                new Order(4, "Заказ", 4, "pack://application:,,,/Images/good.jpg"),
             };
 
-            GoodField = new ObservableCollection<Classes.DataField> { };
+            GoodField = new ObservableCollection<DataField> { };
 
             DataContext = this;
         }
@@ -91,43 +80,43 @@ namespace WpfApp2
         private void Border_PreviewMouseLeftButtonDown_1(object sender, MouseButtonEventArgs e)
         {
             var item = sender as Border;
-            int itemId = (int)item.Tag;
+            itemOrder = (int)item.Tag;
             GoodField.Clear();
             if (category == "goods")
             {
-                foreach (Classes.Good good in GoodCard)
+                foreach (Good good in GoodCard)
                 {
-                    if (good.Id == itemId)
+                    if (good.Id == itemOrder)
                     {
-                        GoodField.Add(new Classes.DataField("Номер", good.Id.ToString()));
-                        GoodField.Add(new Classes.DataField("Название", good.Name));
-                        GoodField.Add(new Classes.DataField("Категория", good.Category));
+                        GoodField.Add(new DataField("Номер", good.Id.ToString()));
+                        GoodField.Add(new DataField("Название", good.Name));
+                        GoodField.Add(new DataField("Категория", good.Category));
                     }
 
                 }
             }
             else if (category == "employees")
             {
-                foreach (Classes.Employee employee in EmployeeCard)
+                foreach (Employee employee in EmployeeCard)
                 {
-                    if (employee.Order == itemId)
+                    if (employee.Order == itemOrder)
                     {
-                        GoodField.Add(new Classes.DataField("Фамилия", employee.Lastname));
-                        GoodField.Add(new Classes.DataField("Имя", employee.Firstname));
-                        GoodField.Add(new Classes.DataField("Отчество", employee.Patronymic));
-                        GoodField.Add(new Classes.DataField("Должность", employee.Text));
+                        GoodField.Add(new DataField("Фамилия", employee.Lastname));
+                        GoodField.Add(new DataField("Имя", employee.Firstname));
+                        GoodField.Add(new DataField("Отчество", employee.Patronymic));
+                        GoodField.Add(new DataField("Должность", employee.Text));
                     }
 
                 }
             }
             else if (category == "orders")
             {
-                foreach (Classes.Order order in OrderCard)
+                foreach (Order order in OrderCard)
                 {
-                    if (order.Id == itemId)
+                    if (order.Id == itemOrder)
                     {
-                        GoodField.Add(new Classes.DataField("Номер заказа", order.Id.ToString()));
-                        GoodField.Add(new Classes.DataField("Номер товара", order.Text.ToString()));
+                        GoodField.Add(new DataField("Номер заказа", order.Id.ToString()));
+                        GoodField.Add(new DataField("Номер товара", order.Text.ToString()));
                     }
 
                 }
@@ -198,7 +187,22 @@ namespace WpfApp2
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Изменено");
+            foreach (Employee employee in EmployeeCard)
+            {
+                if (itemOrder == employee.Order)
+                {
+                    itemId = employee.Id;
+                    break;
+                }
+            }
+            foreach (users user in App.usersList)
+            {
+                if (itemId == user.IdU)
+                {
+                    DbService.UpdateEmployee(user);
+                    break;
+                }
+            }
         }
 
         private void Border_PreviewMouseLeftButtonDown_2(object sender, MouseButtonEventArgs e)
@@ -240,6 +244,24 @@ namespace WpfApp2
                     if (OrderCard[i].Id == itemId)
                     {
                         OrderCard.Remove(OrderCard[i]);
+                    }
+                }
+            }
+        }
+
+        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            var item = sender as TextBox;
+            if (item.Text != "")
+            {
+                foreach (users user in App.usersList)
+                {
+                    if (itemId == user.IdU)
+                    {
+                        if (item.Tag == "Фамилия")
+                        {
+                            user.Lastname = item.Text;
+                        }
                     }
                 }
             }
