@@ -182,6 +182,8 @@ namespace WpfApp2
             {
                 IdU = reader.GetInt32("IdU"),
                 IdR = reader.GetInt32("IdR"),
+                Login = reader.GetString("Login"),
+                Password = reader.GetString("Password"),
                 Lastname = reader.GetString("Lastname"),
                 Firstname = reader.GetString("Firstname"),
                 Patronymic = reader.GetString("Patronymic"),
@@ -222,17 +224,22 @@ namespace WpfApp2
             try
             {
                 string query = @"UPDATE users 
-                            SET IdR = @idR, 
+                            SET IdR = @idR,
+                                Login = @login,
+                                Password = @password,
                                 Lastname = @lastname, 
                                 Firstname = @firstname, 
                                 Patronymic = @patronymic, 
-                                Phone = @email 
+                                Phone = @phone,
+                                Email = @email
                             WHERE IdU = @id";
 
                 var parameters = new Dictionary<string, object>
                 {
                     ["@id"] = user.IdU,
                     ["@idR"] = user.IdR,
+                    ["@login"] = user.Login,
+                    ["@password"] = user.Password,
                     ["@lastname"] = user.Lastname,
                     ["@firstname"] = user.Firstname,
                     ["@patronymic"] = user.Patronymic,
@@ -250,26 +257,26 @@ namespace WpfApp2
             }
         }
 
-        //// Метод для удаления пользователя по ID
-        //public static bool DeleteUser(int userId)
-        //{
-        //    try
-        //    {
-        //        string query = "DELETE FROM users WHERE id = @id";
-        //        var parameters = new Dictionary<string, object>
-        //        {
-        //            ["@id"] = userId
-        //        };
+        // Метод для удаления пользователя по ID
+        public static bool DeleteUser(int userId)
+        {
+            try
+            {
+                string query = "DELETE FROM users WHERE IdU = @id";
+                var parameters = new Dictionary<string, object>
+                {
+                    ["@id"] = userId
+                };
 
-        //        ExecuteNonQueryWithParameters(query, parameters);
-        //        return true;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show($"Ошибка удаления пользователя: {ex.Message}");
-        //        return false;
-        //    }
-        //}
+                ExecuteNonQueryWithParameters(query, parameters);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка удаления пользователя: {ex.Message}");
+                return false;
+            }
+        }
 
         //public static List<News> GetAllNews()
         //{
@@ -283,29 +290,34 @@ namespace WpfApp2
         //    });
         //}
 
-        //public static bool AddNews(News news)
-        //{
-        //    try
-        //    {
-        //        string query = @"INSERT INTO news (title, description, image_path) 
-        //                    VALUES (@title, @description, @image_path)";
+        public static bool AddEmployee(users user)
+        {
+            try
+            {
+                string query = @"INSERT INTO users (IdR, Login, Password, Lastname, Firstname, Patronymic, Phone, Email) 
+                            VALUES (@idR, @login, @password, @lastname, @firstname, @patronymic, @phone, @email)";
 
-        //        var parameters = new Dictionary<string, object>
-        //        {
-        //            ["@title"] = news.Title,
-        //            ["@description"] = news.Description,
-        //            ["@image_path"] = news.ImagePath
-        //        };
+                var parameters = new Dictionary<string, object>
+                {
+                    ["@idR"] = user.IdR,
+                    ["@login"] = user.Login,
+                    ["@password"] = user.Password,
+                    ["@lastname"] = user.Lastname,
+                    ["@firstname"] = user.Firstname,
+                    ["@patronymic"] = user.Patronymic,
+                    ["@phone"] = user.Phone,
+                    ["@email"] = user.Email
+                };
 
-        //        ExecuteNonQueryWithParameters(query, parameters);
-        //        return true;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show($"Ошибка добавления новости: {ex.Message}");
-        //        return false;
-        //    }
-        //}
+                ExecuteNonQueryWithParameters(query, parameters);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка добавления новости: {ex.Message}");
+                return false;
+            }
+        }
 
         //public static bool UpdateNews(News news)
         //{

@@ -104,10 +104,9 @@ namespace WpfApp2
                         GoodField.Add(new DataField("Фамилия", employee.Lastname));
                         GoodField.Add(new DataField("Имя", employee.Firstname));
                         GoodField.Add(new DataField("Отчество", employee.Patronymic));
-                        GoodField.Add(new DataField("Должность", employee.Text));
+                        itemId = employee.Id;
                     }
-
-                }
+                }   
             }
             else if (category == "orders")
             {
@@ -185,16 +184,34 @@ namespace WpfApp2
             this.Close();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            foreach (Employee employee in EmployeeCard)
+            var item = sender as TextBox;
+            if (item.Text != "")
             {
-                if (itemOrder == employee.Order)
+                foreach (users user in App.usersList)
                 {
-                    itemId = employee.Id;
-                    break;
+                    if (itemId == user.IdU)
+                    {
+                        if (item.Tag == "Фамилия")
+                        {
+                            user.Lastname = item.Text;
+                        }
+                        else if (item.Tag == "Имя")
+                        {
+                            user.Firstname = item.Text;
+                        }
+                        else if (item.Tag == "Отчество")
+                        {
+                            user.Patronymic = item.Text;
+                        }
+                    }
                 }
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
             foreach (users user in App.usersList)
             {
                 if (itemId == user.IdU)
@@ -203,6 +220,10 @@ namespace WpfApp2
                     break;
                 }
             }
+            Admin admin = new Admin(_currentUser);
+            admin.Show();
+            this.Close();
+
         }
 
         private void Border_PreviewMouseLeftButtonDown_2(object sender, MouseButtonEventArgs e)
@@ -234,6 +255,8 @@ namespace WpfApp2
                     if (EmployeeCard[i].Id == itemId)
                     {
                         EmployeeCard.Remove(EmployeeCard[i]);
+                        DbService.DeleteUser(itemId);
+                        break;
                     }
                 }
             }
@@ -244,24 +267,6 @@ namespace WpfApp2
                     if (OrderCard[i].Id == itemId)
                     {
                         OrderCard.Remove(OrderCard[i]);
-                    }
-                }
-            }
-        }
-
-        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
-        {
-            var item = sender as TextBox;
-            if (item.Text != "")
-            {
-                foreach (users user in App.usersList)
-                {
-                    if (itemId == user.IdU)
-                    {
-                        if (item.Tag == "Фамилия")
-                        {
-                            user.Lastname = item.Text;
-                        }
                     }
                 }
             }

@@ -26,6 +26,7 @@ namespace WpfApp2
         public ObservableCollection<DataField> EmployeeField { get; set; }
         public ObservableCollection<DataField> GoodField { get; set; }
         public ObservableCollection<DataField> OrderField { get; set; }
+        public int itemId;
         public AdminAdd(users user)
         {
             InitializeComponent();
@@ -34,8 +35,14 @@ namespace WpfApp2
 
             EmployeeField = new ObservableCollection<DataField>
             {
+                new DataField("Должность", "Напишите номер должности"),
+                new DataField("Логин", "Напишите логин"),
+                new DataField("Пароль", "Напишите пароль"),
+                new DataField("Фамилия", "Напишите фамилию"),
                 new DataField("Имя", "Напишите имя"),
-                new DataField("Должность", "Напишите должность")
+                new DataField("Отчество", "Напишите отчество"),
+                new DataField("Телефон", "Напишите телефон"),
+                new DataField("Почта", "Напишите почту")
             };
             GoodField = new ObservableCollection<DataField>
             {
@@ -75,7 +82,7 @@ namespace WpfApp2
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Добавлено");
+            DbService.AddEmployee(new users { IdU = App.usersList.Count + 1, IdR = Int32.Parse(EmployeeField[0].Value), Login = EmployeeField[1].Value, Password = EmployeeField[2].Value, Lastname = EmployeeField[3].Value, Firstname = EmployeeField[4].Value, Patronymic = EmployeeField[5].Value, Phone = EmployeeField[6].Value, Email = EmployeeField[7].Value });
         }
 
         private void Border_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)

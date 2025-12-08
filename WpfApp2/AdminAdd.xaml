@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
         Title="AdminAdd" Height="1024" Width="1440">
-    <Grid Width="1440" Height="1024">
+    <Grid Width="1440" Height="1024" Background="#FFEEEEEE">
         <Grid HorizontalAlignment="Left" Height="1024" VerticalAlignment="Center" Width="267" Background="White">
             <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,20,20,0" Width="227" Height="81.49">
                 <Grid HorizontalAlignment="Left" Height="60" VerticalAlignment="Center" Width="60" RenderTransformOrigin="0.5,0.5">
@@ -164,7 +164,7 @@
                 </Border.Background>
                 <Button Content="Добавить" FontFamily="Verdana" FontSize="20" BorderThickness="0,0,0,0" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="White" Click="Button_Click"/>
             </Border>
-            <Grid HorizontalAlignment="Center" Height="596.75" Margin="0,120.75,0,0" VerticalAlignment="Top" Width="344">
+            <Grid HorizontalAlignment="Center" Height="719" Margin="0,121,0,0" VerticalAlignment="Top" Width="344">
                 <Label Content="Данные" HorizontalAlignment="Center" Height="34" VerticalAlignment="Top" Width="324" FontFamily="Verdana" FontSize="20"/>
                 <ListBox x:Name="fields" BorderBrush="{x:Null}" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,63,0,0" ItemsSource="{Binding AddField}">
                     <ListBox.ItemTemplate>
