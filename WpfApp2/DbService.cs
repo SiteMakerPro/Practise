@@ -278,18 +278,6 @@ namespace WpfApp2
             }
         }
 
-        //public static List<News> GetAllNews()
-        //{
-        //    string query = "SELECT * FROM news ORDER BY id DESC";
-        //    return GetData(query, reader => new News
-        //    {
-        //        Id = reader.GetInt32("id"),
-        //        Title = reader.GetString("title"),
-        //        Description = reader.GetString("description"),
-        //        ImagePath = reader.GetString("image_path")
-        //    });
-        //}
-
         public static bool AddEmployee(users user)
         {
             try
@@ -318,53 +306,5 @@ namespace WpfApp2
                 return false;
             }
         }
-
-        //public static bool UpdateNews(News news)
-        //{
-        //    try
-        //    {
-        //        string query = @"UPDATE news 
-        //                    SET title = @title, 
-        //                        description = @description, 
-        //                        image_path = @image_path 
-        //                    WHERE id = @id";
-
-        //        var parameters = new Dictionary<string, object>
-        //        {
-        //            ["@id"] = news.Id,
-        //            ["@title"] = news.Title,
-        //            ["@description"] = news.Description,
-        //            ["@image_path"] = news.ImagePath
-        //        };
-
-        //        ExecuteNonQueryWithParameters(query, parameters);
-        //        return true;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show($"Ошибка обновления новости: {ex.Message}");
-        //        return false;
-        //    }
-        //}
-
-        //public static bool DeleteNews(int newsId)
-        //{
-        //    try
-        //    {
-        //        string query = "DELETE FROM news WHERE id = @id";
-        //        var parameters = new Dictionary<string, object>
-        //        {
-        //            ["@id"] = newsId
-        //        };
-
-        //        ExecuteNonQueryWithParameters(query, parameters);
-        //        return true;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show($"Ошибка удаления новости: {ex.Message}");
-        //        return false;
-        //    }
-        //}
     }
 }
