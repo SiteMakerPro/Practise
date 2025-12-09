@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpfApp2.Classes;
+using WpfApp2.Models;
 
 namespace WpfApp2
 {
@@ -21,12 +22,13 @@ namespace WpfApp2
     /// </summary>
     public partial class Profile : Window
     {
+        public users _currentUser;
         public ObservableCollection<Classes.User> Users { get; set; }
         public ObservableCollection<Classes.DataField> DataFields { get; set; }
-        public Profile()
+        public Profile(users user)
         {
             InitializeComponent();
-
+            _currentUser = user;
             Users = new ObservableCollection<Classes.User>
             {
                 new Classes.User(1, "Ктото", "djksdjdks@mail.ru", "user", "12345", "Г. Гдетонск", "88005553535")
@@ -95,6 +97,20 @@ namespace WpfApp2
             data.Style = (Style)Application.Current.FindResource("BtnActivated");
             //catalog.ItemsSource = GoodCard;
             //category = "goods";
+        }
+
+        private void Grid_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            User user = new User(_currentUser);
+            user.Show();
+            this.Close();
+        }
+
+        private void Grid_PreviewMouseLeftButtonDown_1(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
         }
     }
 }

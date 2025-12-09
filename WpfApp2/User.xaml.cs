@@ -22,7 +22,7 @@ namespace WpfApp2
     /// </summary>
     public partial class User : Window
     {
-        private users _currentUser;
+        public users _currentUser;
         public ObservableCollection<BasketCell> BasketCells { get; set; }
         public string category = "Инвентарь";
         public MainWindow mainWindow = new MainWindow();
@@ -247,7 +247,7 @@ namespace WpfApp2
 
         private void Border_PreviewMouseLeftButtonDown_2(object sender, MouseButtonEventArgs e)
         {
-            Profile profile = new Profile();
+            Profile profile = new Profile(_currentUser);
             profile.Show();
             this.Close();
         }

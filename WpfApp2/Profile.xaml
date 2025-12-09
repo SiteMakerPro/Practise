@@ -130,11 +130,11 @@
             </Grid>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="92" Margin="20,872,0,0" VerticalAlignment="Top">
-            <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Width="227" Height="36">
+            <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Width="227" Height="36" PreviewMouseLeftButtonDown="Grid_PreviewMouseLeftButtonDown">
                 <Image HorizontalAlignment="Left" VerticalAlignment="Center" Width="36" Height="36" Source="Images/Home Page.png" Margin="20, 0, 0, 0"/>
                 <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20" Text="Главная"/>
             </Grid>
-            <Grid HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="227" Height="36">
+            <Grid HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="227" Height="36" PreviewMouseLeftButtonDown="Grid_PreviewMouseLeftButtonDown_1">
                 <Image HorizontalAlignment="Left" VerticalAlignment="Center" Width="36" Height="36" Source="Images/Logout.png" Margin="20, 0, 0, 0"/>
                 <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="76, 0, 0, 0" FontFamily="Verdana" FontSize="20" Text="Выйти"/>
             </Grid>
